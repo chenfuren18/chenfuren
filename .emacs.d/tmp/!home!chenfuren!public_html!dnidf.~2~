@@ -1,0 +1,1056 @@
+Emacs ¿ìËÙÖ¸ÄÏ.£¨²é¿´°æÈ¨ÉùÃ÷ÇëÖÁ±¾ÎÄÄ©Î²£©
+
+ NOTICE: The main purpose of the Emacs tutorial is to teach you
+ the most important standard Emacs commands (key bindings).
+ However, your Emacs has been customized by changing some of
+ these basic editing commands, so it doesn't correspond to the
+ tutorial.  We have inserted colored notices where the altered
+ commands have been introduced. [More]
+
+
+¡¾×¢Òâ£ºÎ»ÓÚ¡¾¡¿Ö®¼äµÄÄÚÈÝÊÇÒë×¢£¬±ÈÈç±¾ÐÐ£¬ÏÂÍ¬¡£¡¿
+
+Emacs ¼üÅÌÃüÁîÍ¨³£°üº¬ CONTROL ¼ü£¨ÓÐÊ±ºòÒÔ CTRL »ò CTL À´±êÊ¾£©ºÍ
+META ¼ü£¨ÓÐÊ±ºòÓÃ EDIT »ò ALT À´±êÊ¾£©¡£ÎªÁË±ÜÃâÃ¿´Î¶¼ÒªÐ´³öÈ«Ãû£¬ÎÒÃÇ
+Ô¼¶¨Ê¹ÓÃÏÂÊöËõÐ´£º
+
+ C-<chr>  ±íÊ¾µ±ÊäÈë×Ö·û <chr> Ê±°´×¡ CONTROL ¼ü¡£
+          Òò´Ë C-f ¾Í±íÊ¾£º°´×¡ CONTROL ¼üÔÙÊäÈë f¡£
+
+ M-<chr>  ±íÊ¾µ±ÊäÈë×Ö·û <chr> Ê±°´×¡ META£¨»ò EDIT »ò ALT£©¼ü¡£
+          Èç¹ûÄãµÄ¼üÅÌÉÏÃ»ÓÐ META ¡¢EDIT »ò ALT ¼ü£¬ÓÃÏÂÊö·½·¨Ò²µÈÐ§£º
+          ÏÈ°´Ò»ÏÂ ESC ¼üÈ»ºó·Å¿ª£¬ÔÙÊäÈë <chr>¡£ÎÒÃÇÓÃ <ESC> À´±íÊ¾
+          ESC ¼ü¡£
+
+ÖØÒªÌáÊ¾£ºÒªÍË³ö Emacs£¬ÇëÓÃ C-x C-c£¨Á½¸öÁ¬ÐøµÄ×éºÏ¼ü£©¡£ÏÂÎÄÖÐ×ó±ß¶¥
+ÐÐµÄ¡°>>¡±×ÖÑùÓÃÀ´ÌáÊ¾Äã³¢ÊÔ¼üÅÌÃüÁî¡£±ÈÈç£º
+
+
+
+
+>> ÏÖÔÚÊäÈë C-v £¨²é¿´ÏÂÒ»ÆÁÎÄ×Ö£©ÒÆ¶¯µ½ÏÂÒ»ÆÁ¡£
+   £¨±ð½ôÕÅ£¬ÔÚÊäÈë×Ö·û v µÄÍ¬Ê±×¢ÒâÒª°´×¡ CONTROL ¼ü£©
+   ´ÓÏÖÔÚ¿ªÊ¼£¬Ã¿¶ÁÍêµ±Ç°Ò»ÆÁÄã¶¼ÐèÒªÕâÑù×öÒ»´Î¡£
+
+ÖµµÃ×¢ÒâµÄÊÇ£¬µ±Äã´ÓÉÏÒ»ÆÁ¹öµ½ÏÂÒ»ÆÁÊ±£¬ÖÐ¼ä»áÓÐÁ½ÐÐµÄÖØ¸´£»ÕâÑù×öÊÇÎª
+ÁËÎ¬³Ö¹öÆÁµÄÁ¬ÐøÐÔ£¬·½±ãÄãË³³©¡¢Á¬ÐøµØÔÄ¶Á¡£
+
+ÓÃ±à¼­Æ÷£¬¿ªÃÅµÚÒ»¼þÊÂ¾ÍÊÇÑ§»áÔÚÎÄ×ÖÖÐÒÆ¶¯¡£ÄãÒÑ¾­ÖªµÀÁË C-v ¿ÉÒÔÏòÏÂÒÆ
+¶¯Ò»ÆÁ£¬ÒªÍùÉÏÒÆ£¬ÇëÓÃ M-v £¨Ò²¾ÍÊÇ°´×¡ META ¼ü£¬È»ºóÊäÈëv£¬Èç¹ûÄãÃ»ÓÐ
+META¡¢EDIT »ò ALT ¼üÄÇÃ´¾ÍÏÈ°´ <ESC> ÔÙ°´ v£©¡£
+
+>>  ÊÔÊÔ M-v£¬È»ºóÔÙÊÔÊÔ C-v£¬À´»ØåÞ¼¸´Î¡£
+
+
+* Ð¡½á£¨SUMMARY£©
+-----------------
+
+ÒÔÏÂÃüÁîÔÚ·­Ò³ä¯ÀÀÊ±Ïàµ±ÓÐÓÃ£º
+
+        C-v     ÏòÇ°ÒÆ¶¯Ò»ÆÁ
+        M-v     ÏòºóÒÆ¶¯Ò»ÆÁ
+        C-l     ÖØ»æÆÁÄ»£¬²¢½«¹â±êËùÔÚÐÐÖÃÓÚÆÁÄ»µÄÖÐÑë
+                £¨×¢ÒâÊÇ CONTROL-L£¬²»ÊÇ CONTROL-1£©
+
+>> ÕÒµ½¹â±ê£¬ÁôÒâÆä¸½½üµÄÎÄ×Ö£¬È»ºóÊäÈë C-l¡£
+   ÕÒÕÒ¹â±êÔÚÄÄÀï£¬Äã»á·¢ÏÖÆä¸½½üµÄÎÄ×Ö²¢Ã»ÓÐ±ä»¯¡£
+
+Èç¹ûÄãµÄ¼üÅÌÉÏÓÐ PageUp ºÍ PageDn£¬Ò²¿ÉÒÔÓÃÕâÁ½¸ö¼üÀ´¹öÆÁ¡£²»¹ýÊ¹ÓÃ
+C-v ºÍ M-v µÄÐ§ÂÊÒª¸ü¸ßÒ»Ð©¡£
+
+
+* »ù±¾µÄ¹â±ê¿ØÖÆ£¨BASIC CURSOR CONTROL£©
+----------------------------------------
+
+ÕûÆÁµÄÒÆ¶¯ºÜÓÐÓÃ£¬µ«ÊÇÈçºÎÔÚÎÄ×ÖÖÐ¾«È·¶¨Î»ÄØ£¿
+
+ÓÐ¼¸ÖÖ·½Ê½¿ÉÒÔÑ¡Ôñ¡£ÓÃ·½Ïò¼üµ±È»¿ÉÒÔ£¬²»¹ý¸üÓÐÐ§ÂÊµÄ·½·¨ÊÇ±£³ÖË«ÊÖÎ»ÓÚ
+Ö÷¼üÅÌÇø£¬È»ºóÊ¹ÓÃ C-p ¡¢ C-b ¡¢ C-f ºÍ C-n ÕâËÄ¸öÃüÁî¡£ËüÃÇµÄ¹¦ÄÜºÍ·½
+Ïò¼üÊÇÒ»ÑùµÄ£¬ÈçÏÂÍ¼ËùÊ¾£º
+
+                             ÉÏÒ»ÐÐ C-p
+                                  :
+                                  :
+            Ïò×óÒÆ C-b .... Ä¿Ç°¹â±êÎ»ÖÃ .... ÏòÓÒÒÆ C-f
+                                  :
+                                  :
+                             ÏÂÒ»ÐÐ C-n
+
+>> ÓÃ C-n »ò C-p ½«¹â±êÒÆµ½ÉÏÍ¼µÄÖÐÑë¡£
+   °´ C-l£¬Õû·ùÍ¼»á±»ÏÔÊ¾ÔÚÆÁÄ»µÄÖÐÑë¡£
+
+¡°P N B F¡±ËÄ¸ö×ÖÄ¸·Ö±ð´ú±íÁËËÄ¸ö´Ê£¬ÓÃÕâËÄ¸ö´Ê¼ÇÒäÕâÐ©×éºÏ¼ü»á¸üÈÝÒ×£º
+P ´ú±í previous£¨ÉÏÒ»ÐÐ£©£¬N ´ú±í next£¨ÏÂÒ»ÐÐ£©£¬B ´ú±í backward£¨»Ø
+ÍË£©£¬¶ø F Ôò´ú±í forward£¨Ç°½ø£©¡£ÕâÐ©×éºÏ¼ü½ñºó½«ÓëÄãÐÎÓ°²»Àë¡£
+
+>> °´¼¸´Î C-n °Ñ¹â±êÍùÏÂÅ²µ½ÕâÀï¡£
+
+>> ÓÃ C-f °Ñ¹â±êÒÆ¶¯µ½ÕâÒ»ÐÐ£¬È»ºóÔÙÓÃ C-p ÍùÉÏÅ²¡£
+   ×¢Òâ¹Û²ìµ±¹â±êÔÚÒ»ÐÐµÄÖÐÑëÊ± C-p ÃüÁîµÄÐÐÎª¡£
+
+Ã¿ÐÐÎÄ×Ö¶¼ÒÔÒ»¸ö¡°»»ÐÐ·û¡±½áÊø£¬¡°»»ÐÐ·û¡±°ÑÐÐÓëÐÐÇø·Ö¿ªÀ´¡£ÎÄ¼þµÄ×îºó
+Ò»ÐÐÒ²Ó¦¸ÃÒ²ÓÐÒ»¸ö»»ÐÐ·û£¨²»¹ý Emacs ²¢²»Ç¿ÖÆÒªÇóÕâÒ»µã£©¡£
+
+>> ÔÚÒ»ÐÐµÄÐÐÍ·ÊäÈë C-b¡£
+   ¹â±êÓ¦¸Ã»áÒÆ¶¯µ½Ç°Ò»ÐÐµÄÐÐÎ²£¬ÒòÎª¹â±êÔÚ»ØÍË¹ý³ÌÖÐÔ½¹ýÁË»»ÐÐ·û¡£
+
+Í¬Ñù C-f Ò²¿ÉÒÔÏñ C-b Ò»ÑùÔ½¹ý»»ÐÐ·û¡£
+
+>> Á¬°´¼¸´Î C-b£¬¸ÐÊÜÒ»ÏÂ¹â±êµÄÒÆ¶¯¡£
+   È»ºó°´¼¸´Î C-f »Øµ½±¾ÐÐµÄÐÐÎ²¡£
+   ÔÙ°´Ò»´Î C-f£¬¹â±ê»áÒÆ¶¯µ½ÏÂÒ»ÐÐ¡£
+
+µ±ÄãÒÆ¶¯¹â±ê´©Ô½ÆÁÄ»µÄÉÏÏÂ±ß½çÊ±£¬ÔÚ±ß½çÍâµÄÎÄ×Ö»áÒÆ¶¯µ½ÆÁÄ»ÄÚ£¬Õâ³ÆÎª
+¡°¹ö¶¯¡±£¨scrolling£©¡£¹ö¶¯Ê¹µÃ¹â±ê¿ÉÒÔ±»ÒÆ¶¯µ½ÎÄ×ÖÖÐµÄÈÎºÎÎ»ÖÃ£¬²¢ÇÒ»¹
+²»»áÈÃ¹â±êÅÜµ½ÆÁÄ»Íâ±ßÈ¥¡£
+
+>> ÓÃ C-n ½«¹â±êÏÂÒÆ£¬Ò»Ö±Ô½¹ýÆÁÄ»±ß½ç£¬Í¬Ê±¹Û²ì·¢ÉúÁËÊ²Ã´±ä»¯¡£
+
+Èç¹ûÄãÏÓÒ»¸ö×Ö·ûÒ»¸ö×Ö·ûµØÅ²¹â±êÌ«Âý£¬Äã»¹¿ÉÒÔÒ»¸ö´ÊÒ»¸ö´ÊµØÌø¡£M-f
+(META-f) ¿ÉÒÔ½«¹â±êÍùÇ°ÒÆ¶¯Ò»¸ö´Ê£¬¶ø M-b ÔòÊÇÍùºóÒÆ¡£¡¾ÕâÀïµÄ¡°´Ê¡±Ö¸
+Ó¢ÎÄµ¥´Ê£¬¶ÔÖÐÎÄÀ´Ëµ£¬ÔòÊÇÖ¸ÒÆ¶¯µ½ÏÂÒ»¸ö±êµã·ûºÅ¡£¡¿
+
+>> ÊÔÊÔ M-f ºÍ M-b¡£
+
+Èç¹û¹â±êÍ£ÔÚÒ»¸ö´ÊµÄÖÐ¼ä£¬M-f »áÒÆ¶¯µ½Õâ¸ö´ÊµÄÄ©Î²¡£Èç¹û¹â±ê´¦ÓÚ´ÊÓë´Ê
+Ö®¼äµÄ¿Õ°×´¦£¬M-f »áÒÆ¶¯µ½ÏÂÒ»¸ö´ÊµÄÄ©Î²¡£M-b µÄ¹¦ÄÜÀàËÆ£¬Ö»ÊÇ·½ÏòÏà·´¡£
+
+>> °´¼¸´Î M-f ºÍ M-b£¬ÖÐ¼ä¼ÐÔÓÒ»Ð© C-f ºÍ C-b¡£
+   Äã¿ÉÒÔ¹Û²ìµ½ M-f ºÍ M-b ÔÚ²»Í¬Î»ÖÃÉÏËù±íÏÖ³öÀ´µÄ²»Í¬ÐÐÎª¡£
+
+Çë×¢Òâ C-f ¡¢C-b ºÍ M-f ¡¢M-b Á½¶ÔÖ®¼äµÄÀà±È¹ØÏµ¡£Í¨³£µÄ¹ßÀýÊÇ£ºMETA Ïµ
+ÁÐ×éºÏ¼üÓÃÀ´²Ù×÷¡°ÓÉÓïÑÔ¶¨ÒåµÄµ¥Î»£¨±ÈÈç´Ê¡¢¾ä×Ó¡¢¶ÎÂä£©¡±£¬¶ø CONTROL
+ÏµÁÐ×éºÏ¼üÓÃÀ´²Ù×÷¡°ÓëÓïÑÔÎÞ¹ØµÄ»ù±¾µ¥Î»£¨±ÈÈç×Ö·û¡¢ÐÐµÈµÈ£©¡±¡£
+
+ÀàËÆµÄ¹ßÀýÔÚ¡°ÐÐ¡±Óë¡°¾ä×Ó¡±Ö®¼äÒ²Í¬ÑùÊÊÓÃ£ºC-a ºÍ C-e ¿ÉÒÔ½«¹â±êÒÆ¶¯µ½
+¡°Ò»ÐÐ¡±µÄÍ·²¿ºÍÎ²²¿£»¶ø M-a ºÍ M-e Ôò½«¹â±êÒÆ¶¯µ½¡°Ò»¾ä¡±µÄÍ·²¿ºÍÎ²²¿¡£
+
+>> °´Á½´Î C-a£¬ÔÙ°´Á½´Î C-e¡£
+   °´Á½´Î M-a£¬ÔÙ°´Á½´Î M-e¡£
+
+ÏëÒ»ÏëÎªÊ²Ã´ÖØ¸´µÄ C-a ÃüÁî»áÃ»ÓÐ×÷ÓÃ£¬¶øÖØ¸´µÄ M-a ÃüÁîÔò»áÈÃ¹â±ê²»¶Ï
+µØ»ØÍËµ½ÉÏÒ»¸ö¾ä×Ó¡£ËäÈ»Õâ¸öÀà±È¹æÂÉ²¢²»ÑÏ¸ñ£¬µ«ÊÇºÜ×ÔÈ»¡£
+
+¹â±êÍ£ÁôµÄÎ»ÖÃÒ²¿ÉÒÔ³Æ×÷¡°µãÎ»¡±£¨point£©¡£»òÕß¸É´àËµ£¬¹â±êÖ¸Ê¾³öÁËÆÁÄ»
+ÉÏ¡°µãÎ»¡±ÔÚÎÄ±¾ÖÐµÄÎ»ÖÃ¡£
+
+ÕâÀï¶Ô¼òµ¥µÄ¹â±êÒÆ¶¯ÃüÁî×öÒ»¸ö×Ü½á£¬ÆäÖÐÒ²°üÀ¨ÁËÕû´ÊºÍÕû¾äµÄÒÆ¶¯£º
+
+        C-f     ÏòÓÒÒÆ¶¯Ò»¸ö×Ö·û
+        C-b     Ïò×óÒÆ¶¯Ò»¸ö×Ö·û
+
+        M-f     ÏòÓÒÒÆ¶¯Ò»¸ö´Ê¡¾¶ÔÖÐÎÄÊÇÒÆ¶¯µ½ÏÂÒ»¸ö±êµã·ûºÅ¡¿
+        M-b     Ïò×óÒÆ¶¯Ò»¸ö´Ê¡¾¶ÔÖÐÎÄÊÇÒÆ¶¯µ½ÉÏÒ»¸ö±êµã·ûºÅ¡¿
+
+        C-n     ÒÆ¶¯µ½ÏÂÒ»ÐÐ
+        C-p     ÒÆ¶¯µ½ÉÏÒ»ÐÐ
+
+        C-a     ÒÆ¶¯µ½ÐÐÊ×
+        C-e     ÒÆ¶¯µ½ÐÐÎ²e
+
+        M-a     ÒÆ¶¯µ½¾äÊ×
+        M-e     ÒÆ¶¯µ½¾äÎ²
+
+>> °ÑÉÏÃæËùÓÐµÄÃüÁî¶¼Á·Ï°¼¸´Î£¬ÕâÐ©¿É¶¼ÊÇ×î³£ÓÃµÄÃüÁî¡£
+
+ÕâÀï»¹Òª½éÉÜÁ½¸öÖØÒªµÄ¹â±êÒÆ¶¯ÃüÁî£ºM-< £¨META Ð¡ÓÚºÅ£©¿ÉÒÔ½«¹â±êÒÆ¶¯µ½
+ËùÓÐÎÄ×ÖµÄ×î¿ªÍ·£»M-> £¨META ´óÓÚºÅ£©¿ÉÒÔ½«¹â±êÒÆ¶¯µ½ËùÓÐÎÄ×ÖµÄ×îÄ©Î²¡£
+
+×¢Òâ£¬ÔÚ´ó²¿·Ö¼üÅÌÉÏ£¬Ð¡ÓÚºÅ£¨<£©ÐèÒªÓÃÉÏµµ¼ü£¨Shift£©À´ÊäÈë£¬ËùÒÔÔÚÕâ
+Ð©¼üÅÌÉÏÄãÓ¦¸ÃÓÃ Shift ¼üÀ´ÊäÈë M-<£¬Èç¹û²»°´ Shift ¼ü£¬ÄãÊäÈëµÄ»áÊÇ
+M-comma£¨META ¶ººÅ£©¡£
+
+>> ÊÔÒ»ÊÔ M-< £¬ÒÆµ½±¾¿ìËÙÖ¸ÄÏµÄ×î¿ªÊ¼¡£
+   È»ºóÔÙ°´¼¸´Î C-v »Øµ½ÕâÀï¡£
+
+>> ÊÔÒ»ÊÔ M-> £¬ÒÆµ½±¾¿ìËÙÖ¸ÄÏµÄ×îÄ©Î²¡£
+   È»ºóÔÙ°´¼¸´Î M-v »Øµ½ÕâÀï¡£
+
+Èç¹ûÄãµÄ¼üÅÌÉÏÓÐ·½Ïò¼üµÄ»°£¬Ò²¿ÉÒÔÓÃËüÃÇÀ´ÒÆ¶¯¹â±ê¡£²»¹ýÎÒÃÇÓÐÈý¸öÀíÓÉ
+ÍÆ¼öÄãÑ§Ï° C-b ¡¢C-f ¡¢C-n ¡¢ºÍ C-p£º£¨1£©ËüÃÇÔÚÈÎºÎ¼üÅÌÉÏ¶¼ÄÜÓÃ¡££¨2£©
+µ±ÄãÊìÁ·Ê¹ÓÃ Emacs Ö®ºó£¬Äã»á·¢ÏÖÓÃÕâÐ©×éºÏ¼ü±ÈÓÃ·½Ïò¼üÒª¿ìµÃ¶à£¬ÒòÎªÄã
+µÄÊÖ²»ÐèÒªÀë¿ª´ò×ÖÇø¡££¨3£©Ò»µ©ÄãÏ°¹ßÁËÊ¹ÓÃÕâÐ©×éºÏ¼ü£¬ÄãÒ²¿ÉÒÔºÜÈÝÒ×µØ
+ÊÊÓ¦ÆäËü¸ü¸ß¼¶µÄ¹â±êÒÆ¶¯ÃüÁî¡£
+
+´ó²¿·ÖµÄ Emacs ÃüÁî½ÓÊÜÊý×Ö²ÎÊý£¬²¢ÇÒ¶ÔÓÚ¶àÊýÃüÁî¶øÑÔ£¬ÕâÐ©Êý×Ö²ÎÊýµÄ×÷
+ÓÃÊÇÖ¸¶¨ÃüÁîµÄÖØ¸´´ÎÊý¡£ÎªÒ»¸öÃüÁîÖ¸¶¨Êý×Ö²ÎÊý£¨Ò²¾ÍÊÇÖØ¸´´ÎÊý£©µÄ·½·¨
+ÊÇ£ºÏÈÊäÈë C-u£¬È»ºóÊäÈëÊý×Ö×÷Îª²ÎÊý£¬×îºóÔÙÊäÈëÃüÁî¡£Èç¹ûÄãÓÐMETA £¨»ò
+EDIT »ò ALT£©¼ü£¬ÄÇÃ´»¹ÓÐÁíÒ»ÖÖ°ì·¨£º°´×¡ META ¼ü²»·Å£¬È»ºóÊäÈëÊý×Ö¡£²»
+¹ýÎÒÃÇ»¹ÊÇ½¨ÒéÄãÓÃ C-u£¬ÒòÎªËüÔÚÈÎºÎÖÕ¶Ë»úÉÏ¶¼ÄÜÓÃ¡£ÕâÖÖÊý×Ö²ÎÊýÒ²³ÆÎª
+¡°Ç°×º²ÎÊý¡±£¬ÒâË¼ÊÇËµÕâ¸ö²ÎÊýÊÇÏÈÓÚÊ¹ÓÃËüµÄÃüÁî¶øÊäÈëµÄ¡£
+
+¾ÙÀýÀ´Ëµ£¬ C-u 8 C-f »áÏòÇ°ÒÆ¶¯ 8 ¸ö×Ö·û¡£
+
+>> Îª C-n »òÕß C-p Ö¸¶¨Ò»¸öÊý×Ö²ÎÊý£¬ÕâÑùÄã¿ÉÒÔÖ»ÓÃÒ»¸öÃüÁî¾Í°Ñ¹â±êÒÆ¶¯
+   µ½±¾ÐÐµÄ¸½½ü¡£
+
+ËäÈ»´ó²¿·ÖÃüÁî°ÑÊý×Ö²ÎÊý½âÊÍÎªÆäÖØ¸´´ÎÊý£¬µ«ÊÇÒ²ÓÐÐ©ÃüÁîÀýÍâ£¬ËüÃÇ½«Êý
+×Ö²ÎÊýÁí×öËüÓÃ¡£±ÈÈçÓÐÐ©ÃüÁî£¨ÎÒÃÇÄ¿Ç°»¹Ã»Ñ§µ½£©½ö½ö½«Ç°×º²ÎÊý×÷ÎªÒ»¸ö
+±êÖ¾¡ª¡ªÖ»Òª¸ø³öÓÐÒ»¸öÇ°×º²ÎÊý£¬²»¹ÜÆäÖµÎªºÎ£¬Ëü¶¼»á¸Ä±äÃüÁîµÄ¹¦ÄÜ¡£
+
+¶ø C-v ºÍ M-v ÔòÊôÓÚÁíÒ»ÖÖÀàÐÍµÄÀýÍâ¡£µ±¸ø¶¨Ò»¸ö²ÎÊýÊ±£¬ËüÃÇ½«¹ö¶¯ÄãÖ¸
+¶¨µÄ¡°ÐÐÊý¡±£¬¶ø²»ÊÇ¡°ÆÁÊý¡±¡£¾ÙÀýÀ´Ëµ£¬C-u 8 C-v ½«ÆÁÄ»ÏòÏÂ¹ö¶¯ 8 ÐÐ£¬
+¶ø²»ÊÇ 8 ÆÁ¡£
+
+>> ÏÖÔÚÊÔÊÔ¿´£¬ÊäÈë C-u 8 C-v¡£
+
+Õâ¸öÃüÁîÓ¦¸ÃÒÑ¾­½«ÎÄ×ÖÏòÉÏ¹ö¶¯ÁË 8 ÐÐ¡£Èç¹ûÄãÏë½«ËüÔÙ´ÎµØÏòÏÂ¹ö¶¯£¬Äã¿É
+ÒÔ¸ø¶¨Ò»¸ö²ÎÊýÈ»ºóÖ´ÐÐ M-v¡£
+
+Èç¹ûÄãÕýÔÚÊ¹ÓÃÒ»¸ö´°¿ÚÏµÍ³£¬±ÈÈç X11 »òÕßÎ¢ÈíµÄ Windows£¬ÄÇÃ´ÔÚ Emacs
+´°¿ÚµÄ±ßÔµÓ¦¸ÃÓÐÒ»¸ö³¤·½ÐÎµÄÇøÓò½Ð¡°¹ö¶¯Ìõ¡±£¬Äã¿ÉÒÔÓÃÊó±ê²Ù×Ý¹ö¶¯ÌõÀ´
+¹ö¶¯ÎÄ×Ö¡£
+
+>> ÊÔ×ÅÔÚ¡°¹ö¶¯ÌõÄÚµÄ·´°×ÇøÓò¡±ÉÏ°´Ò»ÏÂÊó±êÖÐ¼ü¡£
+   ÎÄ×ÖÓ¦¸Ã»á¹ö¶¯µ½Êó±êËùÖ¸Ê¾µÄÎ»ÖÃ¡£
+
+>> µ±°´×¡ÖÐ¼üÊ±£¬ÊÔ×Å½«Êó±êÉÏÏÂÒÆ¶¯¡£
+   Äã»á¿´µ½ÎÄ×ÖËæ×ÅÊó±êµÄÒÆ¶¯¶øÉÏÏÂ¹ö¶¯¡£
+   ¡¾Windows °æ±¾·ûºÏ Windows ³ÌÐòµÄ´«Í³²Ù×÷Ï°¹ß£¬ÉÏÊö²Ù×÷²»ÊÊÓÃ¡£¡¿
+
+
+* ÔÚ EMACS Ê§È¥ÏìÓ¦µÄÊ±ºò£¨WHEN EMACS IS HUNG£©
+-----------------------------------------------
+
+Èç¹û Emacs ¶ÔÄãµÄÃüÁîÊ§È¥ÏìÓ¦£¬Äã¿ÉÒÔÓÃ C-g À´°²È«µØÖÕÖ¹ÕâÌõÃüÁî¡£C-g
+Ò²¿ÉÒÔÖÕÖ¹Ò»ÌõÖ´ÐÐ¹ý¾ÃµÄÃüÁî¡£
+
+C-g »¹¿ÉÒÔÈ¡ÏûÊý×Ö²ÎÊýºÍÖ»ÊäÈëµ½Ò»°ëµÄÃüÁî¡£
+
+>> ÊäÈë C-u 100 Éè¶¨Ò»¸öÖµÎª 100 µÄÊý×Ö²ÎÊý£¬È»ºó°´ C-g¡£
+   ÏÖÔÚÔÙ°´ C-f£¬¹â±êÓ¦¸ÃÖ»»áÒÆ¶¯Ò»¸ö×Ö·û£¬ÒòÎªÄãÒÑ¾­ÓÃ C-g È¡ÏûÁË²ÎÊý¡£
+
+Èç¹ûÄã²»Ð¡ÐÄ°´ÁËÒ»ÏÂ <ESC>£¬ÄãÒ²¿ÉÒÔÓÃ C-g À´È¡ÏûËü¡£
+¡¾Õâ¸öËµ·¨ËÆºõÓÐÎÊÌâ£¬ÒòÎª°´ÕÕÕâ¸ö°´¼üË³ÐòÊäÈëµÄÓ¦¸ÃÊÇ C-M-g¡£
+  È¡Ïû <ESC> µÄÕýÈ·×ö·¨ÊÇÔÙÁ¬°´Á½´Î <ESC>¡£¡¿
+
+
+* ±»½ûÓÃµÄÃüÁî£¨DISABLED COMMANDS£©
+-----------------------------------
+
+ÓÐÒ»Ð© Emacs ÃüÁî±»¡°½ûÓÃ¡±ÁË£¬ÒÔ±ÜÃâ³õÑ§ÕßÔÚ²»ÁË½âÆäÈ·ÇÐ¹¦ÄÜµÄÇé¿öÏÂÎó
+ÓÃ¶øÔì³ÉÂé·³¡£
+
+Èç¹ûÄãÓÃµ½ÁËÒ»¸ö±»½ûÓÃµÄÃüÁî£¬Emacs »áÏÔÊ¾Ò»¸öÌáÊ¾ÏûÏ¢£¬¸æËßÄãÕâ¸öÃüÁî
+µ½µ×ÊÇ¸ÉÊ²Ã´µÄ£¬Ñ¯ÎÊÄãÊÇ·ñÒª¼ÌÐø£¬²¢ÔÚµÃµ½ÄãµÄ¿Ï¶¨Ö®ºóÔÙÖ´ÐÐÕâÃüÁî¡£
+
+Èç¹ûÄãÕæµÄÏëÓÃÕâÌõÃüÁî£¬ÔÚ Emacs Ñ¯ÎÊÄãµÄÊ±ºòÓ¦¸Ã°´¿Õ¸ñ¡£Ò»°ãÀ´Ëµ£¬Èç¹û
+Äã²»ÏëÓÃ£¬¾Í°´¡°n¡±¡£
+
+>> ÊÔÊÔ C-x C-l £¨ÕâÊÇÒ»¸ö±»½ûÓÃµÄÃüÁî£©
+   È»ºóÓÃ n À´»Ø´ðÑ¯ÎÊ¡£
+
+
+* ´°¸ñ£¨WINDOWS£©
+-----------------
+
+Emacs ¿ÉÒÔÓÐ¶à¸ö´°¸ñ£¬Ã¿¸ö´°¸ñÏÔÊ¾²»Í¬µÄÎÄ×Ö¡£ºóÃæ»á½éÉÜÔõÃ´¶Ô¸¶¶à¸ö´°
+¸ñ£¬ÏÖÔÚÎÒÃÇÏÈÑ§»áÈçºÎ¹Øµô¶àÓàµÄ´°¸ñ¡£ÆäÊµÒ²ºÜ¼òµ¥£º
+
+        C-x 1   Ö»±£ÁôÒ»¸ö´°¸ñ£¨Ò²¾ÍÊÇ¹ØµôÆäËüËùÓÐ´°¸ñ£©¡£
+
+Ò²¾ÍÊÇÏÈ°´ CONTROL-x È»ºóÔÙ°´ 1¡£C-x 1 »á±£Áô¹â±êËùÔÚµÄ´°¸ñ£¬²¢½«ÆäÀ©´ó
+µ½Õû¸öÆÁÄ»£¬Í¬Ê±¹ØµôËùÓÐÆäËüµÄ´°¸ñ¡£
+
+>> °Ñ¹â±êÒÆµ½±¾ÐÐÈ»ºóÊäÈë C-u 0 C-l¡£
+
+>> ÊäÈë CONTROL-h k CONTROL-f¡£¹Û²ìµ±Ò»¸öÐÂ´°¸ñ³öÏÖÊ±µ±Ç°´°¸ñ£¨ÓÃÀ´ÏÔÊ¾
+   CONTROL-f ÃüÁîµÄÎÄµµ£©ÊÇÈçºÎËõÐ¡µÄ¡£
+
+>> ÊäÈë C-x 1 ¹ØµôÎÄµµ´°¸ñ¡£
+
+Õâ¸öÃüÁî¸úÏÈÇ°Ñ§¹ýµÄÃüÁî²»Ì«Ò»Ñù£¬ÒòÎªËü°üº¬ÁËÁ½¸ö×Ö·û£¬ÒÔ CONTROL-x ¿ª
+Ê¼¡£ÓÐÒ»ÏµÁÐÃüÁî¶¼ÊÇÒÔ CONTROL-x ¿ªÊ¼µÄ£¬ÕâÐ©ÃüÁîÐí¶à¶¼¸ú¡°´°¸ñ¡¢ÎÄ¼þ¡¢
+»º³åÇø¡¾»º³åÇø£¨buffer£©»áÔÚºóÎÄÏêÏ¸½éÉÜ¡¿¡±µÈµÈÖîÈç´ËÀàµÄ¶«Î÷ÓÐ¹Ø£¬Æä
+ÖÐÓÐÐ©ÃüÁî¿ÉÄÜ°üº¬ÁË 2 ¸ö¡¢3 ¸ö»òÕß 4 ¸ö×Ö·û¡£
+
+
+* ²åÈëÓëÉ¾³ý£¨INSERTING AND DELETING£©
+--------------------------------------
+
+²åÈëÎÄ×ÖºÜ¼òµ¥£¬Ö±½ÓÇÃ¼üÅÌ¾Í¿ÉÒÔÁË¡£ÄãÄÜ¿´µ½µÄ×Ö·û£¬±ÈÈç A¡¢7¡¢* µÈµÈ£¬
+¶¼±» Emacs ÊÓÎªÎÄ×Ö²¢ÇÒ¿ÉÒÔÖ±½Ó²åÈë¡£ÇÃ <Return>£¨»Ø³µ¼ü£©»á²åÈëÒ»¸ö»»
+ÐÐ·û¡£
+
+Äã¿ÉÒÔÓÃ <Delback> À´É¾³ý×îºóÊäÈëµÄÒ»¸ö×Ö·û£¬Õâ¸ö¸úÄãÔÚ Emacs Ö®ÍâµÄÓÃ
+·¨Ó¦¸ÃÒ»Ñù¡£Ò»°ãÀ´Ëµ <Delback> ¾ÍÊÇÎ»ÓÚ <Return> ¼üÉÏ·½Ä³´¦µÄÒ»¸ö´ó¿éÍ·
+µÄ¼ü£¬Í¨³£±»±êÊ¾Îª¡°Delete¡±¡¢¡°Del¡±»òÕß¡°Backspace¡±¡£
+
+Èç¹ûÄãÕÒµ½ÁË¡°Backspace¡±¼ü£¬ÄÇÃ´ËüÓ¦¸Ã¾ÍÊÇ <Delback>£»ÕâÊ±ÄÄÅÂÄãÓÖÔÚ±ð
+µÄµØ·½ÕÒµ½ÁËÒ»¸ö¡°Del¡±¼ü£¬ÄÇÃ´ËüÒ²Ó¦¸Ã²»ÊÇ <Delback>¡£
+
+Ò»ÖÖ¸üÍ¨ÓÃµÄËµ·¨ÊÇ£¬<Delback> ½«É¾³ýÎ»ÓÚ¹â±êÇ°µÄÒ»¸ö×Ö·û¡£
+
+>> ÏÖÔÚ¾ÍÀ´ÊÔÊÔ¡ª¡ªÇÃµã×Ö£¬È»ºó°´¼¸ÏÂ <Delback> É¾³ýËüÃÇ¡£
+   ²»ÓÃµ£ÐÄÎÄ¼þ±»ÐÞ¸Ä£¬Äã×öÊ²Ã´¶¼Ã»¹ØÏµ£¬ÕâÀï¾ÍÊÇ×¨¸øÄãÁ·Ï°ÓÃµÄ¡£
+
+Èç¹ûÒ»ÐÐÎÄ×ÖºÜ³¤¡¢³¬³öÁË´°¸ñµÄ¿í¶È£¬ÏÔÊ¾²»ÏÂµÄ²¿·Ö»áÔÚ½ôÁÚµÄÏÂÒ»ÐÐ¼ÌÐø
+ÏÔÊ¾¡£ÕâÊ±»áÓÐÒ»¸ö·´Ð±Ïß£¨ÔÚ¿ØÖÆÌ¨ÏÂÊÇ·´Ð±Ïß£¬Èç¹ûÄãÓÃÍ¼ÐÎ´°¿ÚÏµÍ³£¬Ôò
+Ó¦¸ÃÊÇÒ»¸öÐ¡Ð¡µÄ×ªÍä¼ýÍ·£©ÏÔÊ¾ÔÚÓÒ±ßÑØ£¬±íÃ÷ÕâÊÇÄ³Ò»ÐÐµÄ½ÓÐøÏÔÊ¾¡£
+
+>> ÊäÈëÎÄ×Ö£¬Ò»Ö±µ½ÆÁÄ»µÄÓÒ±ß½ç£¬È»ºó¼ÌÐø£¬Äã»á¿´µ½Ò»¸ö½ÓÐøÐÐ³öÏÖ¡£
+
+>> ÓÃ <Delback> É¾µôÒ»Ð©ÎÄ×Ö£¬Ö±µ½´ËÐÐ³¤¶ÈÐ¡ÓÚ´°¸ñ¿í¶È£¬½ÓÐøÐÐ¾ÍÏûÊ§ÁË¡£
+
+»»ÐÐ·û¸úÆäËü×Ö·ûÒ»Ñù¿ÉÒÔ±»É¾³ý¡£Á½ÐÐÖÐ¼äµÄ»»ÐÐ·û±»É¾³ýºó£¬ÕâÁ½ÐÐ½«»áºÏ
+²¢³ÉÒ»ÐÐ¡£Èç¹ûºÏ²¢ºóµÄÕâÒ»ÐÐÌ«³¤£¬³¬³öÁË´°¸ñ¿í¶È£¬Ëü¾Í»áÒÔÒ»¸ö½ÓÐøÐÐÀ´
+ÏÔÊ¾¡£
+
+>> ÒÆ¶¯¹â±êµ½Ä³ÐÐµÄ¿ªÍ·²¢ÊäÈë <Delback>¡£
+   ÕâÊ±¸ÃÐÐ½«ÓëÆäÇ°Ò»ÐÐÒ»Æð±»ºÏ²¢ÎªÒ»ÐÐ¡£
+dndi dnfdifdna  dfndn  dfndf  dfdifn dfjdlaa dfdf  df dd df d   d d  dd  dfd fdd
+>> ÊäÈë <Return> ÖØÐÂ²åÈëÄã¸Õ²ÅÉ¾³ýµÄ»»ÐÐ·û¡£
+
+Ç°Ãæ½²¹ý£¬´ó²¿·ÖµÄ Emacs ÃüÁî¶¼¿ÉÒÔÖ¸¶¨ÖØ¸´´ÎÊý£¬ÕâÆäÖÐÒ²°üÀ¨ÊäÈë×Ö·ûµÄ
+ÃüÁî¡£ÖØ¸´Ö´ÐÐÊäÈë×Ö·ûµÄÃüÁîÊµ¼ÊÉÏ¾ÍÊÇÊäÈë¶à¸öÏàÍ¬µÄ×Ö·û¡£
+
+>>  ÊÔÊÔ C-u 8 *£¬Õâ½«»á²åÈë ********¡£
+dfnidfdiqdnifjjfd
+ºÃ£¬ÏÖÔÚÄãÓ¦¸ÃÒÑ¾­ÕÆÎÕÁË×î»ù±¾µÄµÄÎÄ±¾²åÈëºÍÐÞ¸Ä¹¦ÄÜ£¬ÆäÊµÉ¾³ý»¹¿ÉÒÔ
+¡°ÒÔ´ÊÎªµ¥Î»¡±½øÐÐ£¬ÏÂÃæÊÇÒ»¸ö¹ØÓÚ¡°É¾³ý¡±²Ù×÷µÄÐ¡½á£º
+
+        <Delback>    É¾³ý¹â±êÇ°µÄÒ»¸ö×Ö·û
+        C-d          É¾³ý¹â±êºóµÄÒ»¸ö×Ö·û
+
+        M-<Delback>  ÒÆ³ý¹â±êÇ°µÄÒ»¸ö´Ê
+        M-d          ÒÆ³ý¹â±êºóµÄÒ»¸ö´Ê
+
+        C-k          ÒÆ³ý´Ó¹â±êµ½¡°ÐÐÎ²¡±¼äµÄ×Ö·û
+        M-k          ÒÆ³ý´Ó¹â±êµ½¡°¾äÎ²¡±¼äµÄ×Ö·û
+
+¡¾¿ÉÄÜÄãÒÑ¾­×¢Òâµ½ÁË¡°É¾³ý£¨delete£©¡±ºÍ¡°ÒÆ³ý£¨kill£©¡±µÄÓÃ´ÊÇø±ð£¬ºó
+ÎÄ»áÓÐÏêÏ¸ËµÃ÷¡£¡¿
+fdfnidfnidql;;nifNdfqnfdifnq;
+×¢Òâ¡°<Delback> ºÍ C-d¡±»¹ÓÐ¡°M-<Delback> ºÍ M-d¡±ÊÇ¸ù¾ÝÇ°Êö¹ßÀý´Ó C-f
+ºÍ M-f ÑÜÉú³öÀ´µÄ£¨ÆäÊµ<Delback>²»ÊÇ¿ØÖÆ×Ö·û£¬ÎÒÃÇÏÈºöÂÔÕâÒ»µã£©¡£C-k
+ºÍ M-k µÄ¹ØÏµÔÚÄ³ÖÖ³Ì¶ÈÉÏÓë C-e ºÍ M-e Ò»Ñù¡ª¡ªÈç¹û°Ñ¡°Ò»ÐÐ¡±ºÍ¡°Ò»¾ä¡±
+×÷Ò»¸öÀà±ÈµÄ»°¡£
+
+ÄãÒ²¿ÉÒÔÓÃÒ»ÖÖÍ¨ÓÃµÄ°ì·¨À´ÒÆ³ý»º³åÇøÀïµÄÈÎºÎÒ»²¿·Ö£ºÊ×ÏÈ°Ñ¹â±êÒÆ¶¯µ½Äã
+ÏëÒªÒÆ³ýµÄÇøÓòµÄÒ»¶Ë£¬È»ºó°´ C-@ »ò C-SPC£¨ÈÎÒ»¼´¿É£¬SPCÖ¸¿Õ¸ñ£©¡¾×¢Òâ£¬
+** C-SPC has been rebound, but you can use C-z instead [More] **
+C-SPC ÍùÍù±»ÖÐÎÄÓÃ»§Éè¶¨³ÉÊäÈë·¨ÈÈ¼ü£¬Èç¹ûÕâÑù£¬C-SPC ¾Í±»ÏµÍ³À¹½Ø¶øÎÞ
+·¨´«µÝ¸ø Emacs ÁË£¬Òò´ËÕâÀï»¹ÊÇÍÆ¼öÊ¹ÓÃC-@¡£¡¿£¬È»ºó½«¹â±êÒÆ¶¯µ½ÁíÒ»¶Ë£¬
+ÔÙÏÂ·½ÏÔÊ¾Ò»¸ö¡°Mark set¡±µÄÏûÏ¢¡£
+>> ÒÆ¶¯¹â±êµ½µÚ¶þÐÐÖÐµÄ¡°¶Ë¡±×Ö¡£
+>> ÊäÈë C-w£¬´Ó¡°Äã¡±¿ªÊ¼µ½¡°¶Ë¡±Ö®Ç°µÄÎÄ×Ö±»È«²¿ÒÆ³ý¡£
+
+×¢Òâ,¡°ÒÆ³ý£¨kill£©¡±ºÍ¡°É¾³ý£¨delete£©¡±µÄ²»Í¬ÔÚÓÚ±»ÒÆ³ýµÄ¶«Î÷¿ÉÒÔÕÒ»Ø
+À´£¬¶ø±»É¾³ýµÄ¾Í²»ÐÐÁË¡£¡¾Êµ¼ÊÉÏ£¬ÒÆ³ýµôµÄ¶«Î÷ËäÈ»¿´ÆðÀ´¡°ÏûÊ§¡±ÁË£¬µ«
+Êµ¼ÊÉÏ±» Emacs ¼ÇÂ¼ÁËÏÂÀ´£¬Òò´Ë»¹¿ÉÒÔÕÒ»ØÀ´£»¶øÉ¾³ýµôµÄ¶«Î÷ËäÈ»Ò²¿ÉÄÜ»¹
+ÔÚÄÚ´æÀï£¬µ«ÊÇÒÑ¾­±» Emacs¡°Å×Æú¡±ÁË£¬ËùÒÔ¾ÍÕÒ²»»ØÀ´ÁË¡£¡¿ÖØÐÂ²åÈë±»ÒÆ
+³ýµÄÎÄ×Ö³ÆÎª¡°ÕÙ»Ø£¨yank£©¡±¡£Ò»°ã¶øÑÔ£¬ÄÇÐ©¿ÉÄÜÏû³ýºÜ¶àÎÄ×ÖµÄÃüÁî»á°Ñ
+Ïû³ýµôµÄÎÄ×Ö¼ÇÂ¼ÏÂÀ´£¨ËüÃÇ±»Éè¶¨³ÉÁË¡°¿ÉÕÙ»Ø¡±£©£¬¶øÄÇÐ©Ö»Ïû³ýÒ»¸ö×Ö·û
+»òÕßÖ»Ïû³ý¿Õ°×µÄÃüÁî¾Í²»»á¼ÇÂ¼±»Ïû³ýµÄÄÚÈÝ£¨×ÔÈ»ÄãÒ²¾ÍÎÞ·¨ÕÙ»ØÁË£©¡£
+
+>> ÒÆ¶¯¹â±êµ½Ò»·Ç¿Õ°×ÐÐµÄÐÐÍ·£¬È»ºóÊäÈë C-k ÒÆ³ýÄÇÒ»ÐÐÉÏµÄÎÄ×Ö¡£
+
+>> ÔÙ´Î C-k£¬Äã¿ÉÒÔ¿´µ½ËüÒÆ³ýÁË¸úÔÚÄÇÒ»ÐÐºóÃæµÄ»»ÐÐ·û¡£
+
+×¢Òâ£¬µ¥¶ÀµÄ C-k »á°ÑÒ»ÐÐµÄÄÚÈÝÒÆ³ý£¬¶øµÚ¶þ¸ö C-k Ôò»áÒÆ³ý»»ÐÐ·û£¬²¢Ê¹
+ÆäºóËùÓÐµÄÐÐ¶¼ÏòÉÏÒÆ¶¯¡£C-k ´¦ÀíÊý×Ö²ÎÊýµÄ·½Ê½ºÜÌØ±ð£¬Ëü»á°Ñ²ÎÊýÖ¸¶¨µÄ
+ÄÇÃ´¶àÐÐÁ¬Í¬ÆäºóµÄ»»ÐÐ·ûÒ»ÆðÒÆ³ý£¬¶ø²»½ö½öÊÇÖØ¸´ C-k ¶øÒÑ¡£±ÈÈç C-u 2
+C-k »á°ÑÁ½ÐÐÒÔ¼°ËüÃÇµÄ»»ÐÐ·ûÒÆ³ý£»¶øÈç¹ûÖ»ÊÇÊäÈë C-k Á½´ÎÏÔÈ»²»ÊÇÕâ¸ö½á
+¹û¡£
+
+½«±»ÒÆ³ýµÄÎÄ×Ö»Ö¸´µÄ¶¯×÷³ÆÎª¡°ÕÙ»Ø£¨yanking£©¡±¡££¨¾ÍºÃÏñ°Ñ±ðÈË´ÓÄãÉí±ß
+ÒÆ×ßµÄ¶«Î÷ÓÖÃÍÁ¦µØÀ­»ØÀ´¡££©Äã¿ÉÒÔÔÚÄãÉ¾³ýÎÄ×ÖµÄµØ·½ÕÙ»Ø£¬Ò²¿ÉÒÔÔÚ±ðµÄ
+µØ·½ÕÙ»Ø£¬»¹¿ÉÒÔ¶à´ÎÕÙ»ØÍ¬ÑùµÄÎÄ×ÖÒÔµÃµ½ËüµÄ¶à¸ö¿½±´¡£
+dfdfndifaifdnfdfkafa
+ÕÙ»ØµÄÃüÁîÊÇ C-y¡£Ëü»áÔÚ¹â±êËùÔÚ´¦²åÈëÄã×îºóÒÆ³ýµÄÎÄ×Ö¡£
+
+>> ÊÔÊÔ¿´£¬ÊäÈë C-y ½«ÎÄ×ÖÕÙ»Ø¡£
+
+Èç¹ûÄãÒ»´ÎÁ¬°´ÁËºÃ¼¸ÏÂ C-k£¬ÄÇÃ´ËùÓÐ±»ÒÆ³ýµÄÐÐ»á±»´æ´¢ÔÚÒ»Æð£¬Ö»ÒªÒ»¸ö
+   <style type="text/css" media="screen">
+   </style>
+ÎÞ·¨»ñÏ¤ÕâÒ»µØµã GPS¶¨Î»Ä³¸ö
+
+½¨Òé£º
+   ÏÖÔÚÄãÓ¦¸ÃÖªµÀÔõÃ´¸´ÖÆÎÄ×ÖÁË¡£
+
+C-y ¿ÉÒÔÕÙ»Ø×î½üÒ»´ÎÒÆ³ýµÄÄÚÈÝ£¬ÄÇÈçºÎÕÙ»ØÇ°¼¸´ÎÒÆ³ýµÄÄÚÈÝÄØ£¿ËüÃÇµ±È»
+Ã»ÓÐ¶ª£¬Äã¿ÉÒÔÓÃ M-y À´ÕÙ»ØËüÃÇ¡£ÔÚÓÃ C-y ÕÙ»Ø×î½üÒÆ³ýµÄÎÄ×ÖÖ®ºó£¬½ô½Ó
+×ÅÔÙ°´ M-y ¾Í¿ÉÒÔÕÙ»ØÔÙÇ°Ò»´Î±»ÒÆ³ýµÄÄÚÈÝ£¬ÔÙ°´Ò»´Î M-y ÓÖ¿ÉÒÔÕÙ»ØÔÙÉÏ
+Ò»´ÎµÄ¡­¡­Á¬ÐøÊ¹ÓÃ M-y Ö±µ½ÕÒµ½ÄãÏëÒªÕÙ»ØµÄ¶«Î÷£¬È»ºóÊ²Ã´Ò²²»ÓÃ×ö£¬¼ÌÐø
+±à¼­¾ÍÐÐÁË¡£
+jfndieoenqdnifqiniaa
+Èç¹ûÁ¬Ðø°´ M-y ºÜ¶à´Î£¬Äã¿ÉÄÜ»á»Øµ½ÆðÊ¼µã£¬Ò²¾ÍÊÇ×î½üÒÆ³ýµÄÎÄ×Ö¡£
+¡¾¿´µÃ³öÕâÊµ¼ÊÉÏÊÇÒ»¸ö»·¡£jfndieoenqdnifqiniaaY¡¿
+
+>> ÒÆ³ýÒ»ÐÐ£¬ÒÆ¶¯Ò»ÏÂ¹â±ê£¬È»ºóÔÙÒÆ³ýÁíÍâÒ»ÐÐ¡£
+   °´ C-Y ½«µÚ¶þ´ÎÒÆ³ýµÄÄÇÐÐÕÙ»ØÀ´¡£
+   ½ô½Ó×ÅÔÙ°´ M-Y£¬Ëü½«»á±»µÚÒ»´ÎÒÆ³ýµÄÄÇÐÐÈ¡´ú¡£
+   ÊÔ×ÅÔÙ°´¼¸ÏÂ M-Y ¿´¿´»á·¢ÉúÊ²Ã´¡£NNN
+   ÔÙ¼ÌÐø£¬Ö±µ½µÚ¶þÐÐ±»ÕÙ»ØÀ´£¬È»ºóÔÙ×ö¸ö¼¸´Î¡£
+   Èç¹û¸ÐÐËÈ¤£¬Äã¿ÉÒÔÊÔ×Å¸ø M-Y Ö¸¶¨Ò»¸öÕýµÄ»ò¸ºµÄ²ÎÊý¡£
+
+
+* ³·Ïú£¨UNDO£©
+--------------
+
+Èç¹ûÄãÐÞ¸ÄÁËÒ»¶ÎÎÄ×Ö£¬ÓÖ¾õµÃ¸ÄµÃ²»ºÃ£¬¿ÉÒÔÓÃ UNDO ÃüÁî½øÐÐ³·Ïú£º
+C-X U¡£
+fdndiadfdafni
+Í¨³£ C-X UfdafndidÏû³ýÒ»¸öÃüÁîËùÔì³ÉµÄËùÓÐ¸Ä±ä£»Èç¹ûÄãÔÚÒ»ÐÐÖÐÁ¬Ðø¶à´ÎµØÊ¹ÓÃ
+C-X U£¬Äã»á°ÑÒÔÇ°µÄÃüÁîÒ²ÒÀ´Î³·Ïú¡£
+
+µ«ÊÇÓÐÁ½¸öÀýÍâ£º
+1£© Ã»ÓÐ¸Ä±äÎÄ×ÖµÄÃüÁî²»Ëã£¨°üÀ¨¹â±êÒÆ¶¯ÃüÁîºÍ¹ö
+
+
+
+ÎÞ·¨»ñÏ¤ÕâÒ»µØµã GPS¶¨Î»Ä³¸ö
+
+½¨Òé£º
+ÎÞ·¨»ñÏ¤ÕâÒ»µØµã GPS¶¨Î»Ä³¸ö
+
+½¨Òé£º
+ÎÞ·¨»ñÏ¤ÕâÒ»µØµã GPS¶¨Î»Ä³¸ö
+
+½¨Òé£º
+ÎÞ·¨»ñÏ¤ÕâÒ»µØµã GPS¶¨Î»Ä³¸ö
+
+½¨Òé£º
+    £¨ÕâÊÇÎªÁË¼õÉÙÄãÔÚ³·Ïú¡°²åÈëÎÄ×Ö¡±¶¯×÷Ê±ÐèÒªÊäÈë C-X U µÄ´ÎÊý£©
+dsnfnsaifqonvqnidniqfjkldfajkdf jdlafnn   eqofldf  eqf lfdk  qlflkdsnfi  df;ewqff oq oewqfdslfji
+>> ÓÃ C-k ½«ÕâÒ»ÐÐÒÆ³ý£¬È»ºóÊäÈë C-x u £¬Ëü»áÔÙ´Î³öÏÖ¡£
+
+C-_ Ò²ÊÇ³·ÏúÃüÁî£»ËüµÄ×÷ÓÃ¸ú C-x u Ò»Ñù£¬µ«ÊÇËü±È½ÏÈÝÒ×¶à´ÎÊäÈë¡£C-_ µÄ
+È±µãÊÇÔÚÄ³Ð©¼üÅÌÉÏ¿ÉÄÜ²»Ì«ÈÝÒ×°´£¬ÕâÒ²ÕýÊÇÎÒÃÇÍ¬Ê±Ìá¹© C-x u µÄÔ­Òò¡£ÔÚ
+Ä³Ð©ÖÕ¶ËÉÏ£¬Äã¿ÉÒÔ°´×¡ CONTROL ÔÙ°´¡°/¡±À´ÊäÈë C-_¡£
+
+Êý×Ö²ÎÊý¶ÔÓÚ C-_ ºÍ C-x u µÄÒâÒåÊÇÖ´ÐÐ³·ÏúµÄÖØ¸´´ÎÊý¡£
+
+
+* ÎÄ¼þ£¨FILE£©
+--------------
+
+Ïë±£´æ¹¤×÷³É¹û¾ÍÒª¼ÇµÃ´æÅÌ£¬·ñÔòÒ»µ©ÍË³ö Emacs Äã±à¼­µÄÎÄ×Ö¾Í»á¶ªÊ§¡£Òª
+´æÅÌ£¬¾ÍÒªÔÚ±à¼­Ç°¡°Ñ°ÕÒ¡±µ½Ò»¸ö´æÅÌÎÄ¼þ¡££¨Õâ¸ö¹ý³ÌÍ¨³£Ò²±»³ÆÎª¡°·ÃÎÊ¡±
+ÎÄ¼þ¡££©
+
+Ñ°ÕÒµ½Ò»¸öÎÄ¼þÒâÎ¶×ÅÄã¿ÉÒÔÔÚ Emacs Àï²é¿´Õâ¸öÎÄ¼þµÄÄÚÈÝ¡£´ÓÐí¶à½Ç¶È¿´£¬
+Õâ¾ÍµÈÓÚÄãÔÚÖ±½Ó±à¼­Õâ¸öÎÄ¼þ£¬Ö»ÊÇÄãËù×öµÄÐÞ¸ÄÖ»ÓÐÔÚ¡°´æÅÌ¡±µÄÊ±ºò²Å»á
+±»Ð´ÈëÎÄ¼þ¡£Ò²ÕýÒòÎªÈç´Ë£¬Äã¿ÉÒÔ¶ªÆúÒ»¸öÐ´µ½Ò»°ëµÄÎÄ¼þ¶ø²»±Ø°ÑÕâ¸ö²ÐÈ±
+ÎÄ¼þÒ²±£´æµ½¼ÆËã»úÉÏ¡£ÔÚ´æÅÌµÄÊ±ºò£¬Emacs »á°Ñ´æÅÌÇ°µÄÎÄ¼þÖØÃüÃû±£´æ£¬
+ÒÔ·ÀÄã¸ÄÍêÖ®ºóÓÖÏë·´»Ú¡£
+
+ÔÚÆÁÄ»µÄÏÂ·½£¬ÄãÓ¦¸ÃÄÜ¹»¿´µ½Í·Î²¶¼ÊÇ¶ÌÏß¡°-¡±µÄÒ»ÐÐ£¬ÐÐÊ×Í¨³£ÊÇÒ»Ð©ÖîÈç
+¡°--:-- TUTORIAL.cn¡±µÄÎÄ×Ö£¬ÕâÐ©ÎÄ×Ö´ú±íÁËÄãµ±Ç°ÕýÔÚ·ÃÎÊµÄÎÄ¼þ¡£±ÈÈçÄã
+ÏÖÔÚÕýÔÚ·ÃÎÊµÄÎÄ¼þ½Ð¡°TUTORIAL.cn¡±£¬ËüÖ»ÊÇÒ»¸ö¸øÄãÁÙÊ±Ê¹ÓÃµÄ¿½±´¡£Ã¿µ±
+Emacs Ñ°ÕÒµ½Ò»¸öÎÄ¼þ£¬ÎÄ¼þÃû¾Í»á³öÏÖÔÚÕâ¸öÎ»ÖÃ¡£
+
+Ñ°ÕÒÎÄ¼þµÄÃüÁîÓÐÒ»¸öÌØµã£¬ÄÇ¾ÍÊÇÄã±ØÐë¸ø³öÎÄ¼þÃû¡£ÎÒÃÇ³ÆÕâ¸öÃüÁî¡°´ÓÖÕ
+¶Ë¶ÁÈëÁËÒ»¸ö²ÎÊý¡±£¨ÔÚÕâÀï£¬Õâ¸ö²ÎÊýÏÔÈ»¾ÍÊÇÎÄ¼þÃû£©¡£ÔÚÄãÊäÈëÕâÌõÃüÁî
+Ö®ºó£º
+
+        C-x C-f   Ñ°ÕÒÒ»¸öÎÄ¼þ
+
+Emacs »áÌáÊ¾ÄãÊäÈëÎÄ¼þÃû¡£ÄãÊäÈëµÄÎÄ¼þÃû»á³öÏÖÔÚÆÁÄ»×îµ×¶ËµÄÒ»ÐÐ£¬ÕâÒ»
+ÐÐ±»³ÆÎªÐ¡»º³å£¨minibuffer£©£¬ÔÚÐ¡»º³åÀïÄã¿ÉÒÔÊ¹ÓÃÍ¨³£µÄ Emacs ±à¼­ÃüÁî
+À´±à¼­ÎÄ¼þÃû¡£
+
+ÔÚÐ¡»º³åÀïÊäÈëÎÄ¼þÃû£¨ÆäÊµÊäÈëÆäËü¶«Î÷Ò²Ò»Ñù£©Ê±¿ÉÒÔÓÃ C-g È¡Ïû¡£
+x
+>> ÊäÈë C-x C-f£¬È»ºóÊäÈë C-g
+   Õâ»á¹ØµôÐ¡»º³å£¬Í¬Ê±Ò²»áÈ¡ÏûÊ¹ÓÃÐ¡»º³åµÄ C-x C-f ÃüÁî¡£
+   µ±È»ÁË£¬ÄãÒ²Ã»ÓÐÕÒÈÎºÎÎÄ¼þ¡£
+
+ÓÃ <Return> ½áÊøÎÄ¼þÃûµÄÊäÈë¡£ÕâÖ®ºó C-x C-f ÃüÁî¿ªÊ¼¹¤×÷²¢ÕÒµ½ÄãÖ¸¶¨µÄ
+ÎÄ¼þ¡£Ð¡»º³åÔÚ C-x C-f ÃüÁî½áÊøÖ®ºóÒ²»áÏûÊ§¡£
+
+Õ£ÑÛ¼äÎÄ¼þ¾Í±»ÏÔÊ¾ÔÚÆÁÄ»ÉÏ£¬Äã¿ÉÒÔ¿ªÊ¼±à¼­ÁË¡£´æÅÌÓÃÕâÌõÃüÁî£º
+
+        C-x C-s   ´¢´æÕâ¸öÎÄ¼þ
+n
+nÕâÌõÃüÁî°Ñ Emacs ÖÐµÄÎÄ×Ö´æ´¢µ½ÎÄ¼þÖÐ¡£µÚÒ»´Î´æÅÌµÄÊ±ºò Emacs »á½«Ô­ÎÄ
+¼þÖØÃüÃûÒÔ±¸·Ý¡£ÖØÃüÃûµÄ¹æÔòÍ¨³£ÊÇÔÚÔ­ÎÄ¼þÃûÖ®ºóÌí¼ÓÒ»¸ö¡°~¡±×Ö·û¡£
+¡¾¶ÔÐí¶àÈËÀ´Ëµ£¬ÕâÊÇÒ»¸ö·³ÈËµÄÌØÐÔ£¬¹ØµôÎÄ¼þ±¸·Ý¿ÉÒÔÓÃÈçÏÂÃüÁî£º
+  M-x customize-variable <Return> make-backup-files <Return>¡¿
+
+´æÅÌ½áÊøºó£¬Emacs »áÏÔÊ¾Ð´ÈëÎÄ¼þµÄÎÄ¼þÃû¡£Äã×îºÃÑø³É¾­³£´æÅÌµÄÏ°¹ß£¬Õâ
+¿ÉÒÔ¼õÉÙÏµÍ³±ÀÀ£ºÍËÀ»ú¸øÄã´øÀ´µÄËðÊ§¡£
+
+>> ÊäÈë C-x C-s °Ñ±¾¿ìËÙÖ¸ÄÏ´æÏÂÀ´¡£
+   Äã»áÔÚÆÁÄ»µÄÏÂ·½¿´µ½Ò»ÌõÏûÏ¢£º¡°Wrote ...TUTORIAL.cn¡±¡£
+
+Äã²»µ«¿ÉÒÔÑ°ÕÒÒ»¸öÒÑÓÐµÄÎÄ¼þÀ´²é¿´»ò±à¼­£¬»¹¿ÉÒÔÑ°ÕÒÒ»¸ö²»´æÔÚµÄÎÄ¼þ¡£
+Êµ¼ÊÉÏÕâÕýÊÇ Emacs ´´½¨ÐÂÎÄ¼þµÄ·½·¨£ºÕÒµ½²»´æÔÚµÄÐÂÎÄ¼þ¡£Ö»ÓÐÔÚ´æÅÌµÄÊ±
+ºò£¬Emacs ²Å»áÕæÕý´´½¨Õâ¸öÎÄ¼þ¡£¶øÔÚÕâÖ®ºóµÄÒ»ÇÐ¾Í¸ú±à¼­Ò»¸öÒÑÓÐÎÄ¼þÃ»
+ÓÐÇø±ðÁË¡£
+
+
+* »º³åÇø£¨BUFFER£©
+------------------
+
+Äã¿ÉÒÔÓÃ C-x C-f ÕÒµ½²¢´ò¿ªµÚ¶þ¸öÎÄ¼þ£¬µ«µÚÒ»¸öÎÄ¼þÈÔÈ»ÔÚ Emacs ÖÐ¡£Òª
+fÇÐ»ØµÚÒ»¸öÎÄ¼þ£¬Ò»ÖÖ°ì·¨ÊÇÔÙÓÃÒ»´Îy C-x C-f¡£ÕâÑù£¬Äã¾Í¿ÉÒÔÔÚ Emacs ÖÐÍ¬
+Ê±´ò¿ª¶à¸öÎÄ¼þ¡£
+
+>> ÓÃ C-x C-f foo <Return> µÄ·½Ê½½¨Á¢Ò»¸öÃûÎª¡°foo¡±µÄÎÄ¼þ¡£
+   ÊäÈëÒ»Ð©ÎÄ×Ö£¬ÔÙÓÃ C-x C-s ±£´æÎÄ¼þ¡°foo¡±¡£
+nnn   ×îºó£¬ÊäÈë C-x C-f TUTORIAL.cn <Return> »Øµ½ÕâÀï¡£
+
+Emacs °ÑÃ¿¸ö±à¼­ÖÐµÄÎÄ¼þ¶¼·ÅÔÚÒ»¸ö³ÆÎª¡°»º³åÇø£¨buffer£©¡±µÄµØ·½¡£Ã¿Ñ°
+ÕÒµ½Ò»¸öÎÄ¼þ£¬Emacs ¾ÍÔÚÆäÄÚ²¿¿ª±ÙÒ»¸ö»º³åÇø¡£ÓÃÏÂÃæµÄÃüÁî¿ÉÒÔÁÐ³öµ±Ç°
+ËùÓÐµÄ»º³åÇø£º
+
+        C-x C-b   ÁÐ³ö»º³åÇø
+** C-x C-b has been rebound, but you can use the `Buffers' menu instead [More] **
+
+>> ÏÖÔÚ¾ÍÊÔÒ»ÏÂ C-x C-b
+
+¹Û²ìÒ»ÏÂ»º³åÇøÊÇÈçºÎ±»ÃüÃûµÄ£¬ËüºÜ¿ÉÄÜ¸úÓëÆä¶ÔÓ¦µÄÎÄ¼þÍ¬Ãû¡£Êµ¼ÊÉÏ£¬Ò»
+¸ö Emacs ´°¸ñÀïµÄÈÎºÎÎÄ×Ö¶¼ÊÇÄ³¸ö»º³åÇøµÄÒ»²¿·Ö¡£
+
+>> ÊäÈë C-x 1 Àë¿ª»º³åÇøÁÐ±í
+
+²»¹Ü´æÔÚ¶àÉÙ»º³åÇø£¬ÈÎºÎÊ±ºò¶¼Ö»ÄÜÓÐÒ»¸ö¡°µ±Ç°¡±»º³åÇø£¬Ò²¾ÍÊÇÄãÕýÔÚ±à
+¼­µÄÕâ¸ö¡£Èç¹ûÄãÏë±à¼­ÆäËüµÄ»º³åÇø£¬¾Í±ØÐë¡°ÇÐ»»¡±¹ýÈ¥¡£ÉÏÃæ½²¹ý£¬ÓÃ
+C-x C-f ÊÇÒ»ÖÖ°ì·¨¡£²»¹ý»¹ÓÐÒ»¸ö¸ü¼òµ¥µÄ°ì·¨£¬ÄÇ¾ÍÊÇÓÃ C-x b¡£ÓÃÕâÌõÃü
+Áî£¬Äã±ØÐëÊäÈë»º³åÇøµÄÃû³Æ¡£
+
+>> ÊäÈë C-x b foo <Return> ÒÔ»Øµ½ÎÄ¼þ¡°foo¡±µÄ»º³åÇø¡£
+   È»ºóÊäÈë C-x b TUTORIAL.cn <Return> »Øµ½ÕâÀï¡£
+
+´ó¶àÊýÇé¿öÏÂ£¬»º³åÇøÓë¸úÆä¶ÔÓ¦µÄÎÄ¼þÊÇÍ¬ÃûµÄ£¨²»°üÀ¨Ä¿Â¼Ãû£©£¬²»¹ýÕâÒ²
+²»ÊÇ¾ø¶ÔµÄ¡£ÓÃ C-x C-b µÃµ½µÄ»º³åÇøÁÐ±í×ÜÊÇÏÔÊ¾»º³åÇøÃû¡£
+
+ÄãÔÚ Emacs ´°¸ñÀï¿´µ½µÄ¡°ÈÎºÎ¡±ÎÄ×Ö¶¼Ò»¶¨ÊôÓÚÄ³¸ö»º³åÇø¡£È»¶ø£¬»º³åÇøÎ´
+±ØÓÐ¶ÔÓ¦ÎÄ¼þ£º±ÈÈçÏÔÊ¾»º³åÇøÁÐ±íµÄ»º³åÇø¾ÍÊÇÕâÑù¡£ÔÙ±ÈÈç¡°*Messages*¡±
+»º³åÇøÒ²Ã»ÓÐ¶ÔÓ¦ÎÄ¼þ£¬Õâ¸ö»º³åÇøÀï´æ·ÅµÄ¶¼ÊÇÔÚ Emacs µ×²¿³öÏÖµÄÏûÏ¢¡£
+
+>> ÊäÈë C-x b *Messages* <Return> ³ò³òÏûÏ¢»º³åÇøÀï¶¼ÓÐÊ²Ã´¶«Î÷¡£
+   È»ºóÔÙÊäÈë C-x b TUTORIAL.cn <Return> »Øµ½ÕâÀï¡£
+
+Èç¹ûÄã¶ÔÄ³¸öÎÄ¼þ×öÁËÐ©ÐÞ¸Ä£¬È»ºóÇÐ»»µ½ÁíÒ»¸öÎÄ¼þ£¬Õâ¸ö¶¯×÷²¢²»»á°ïÄã°Ñ
+Ç°Ò»¸öÎÄ¼þ´æÅÌ¡£¶ÔµÚÒ»¸öÎÄ¼þµÄÐÞ¸ÄÈÔÈ»½ö´æÔÚÓÚ Emacs ÖÐ£¬Ò²¾ÍÊÇÔÚËü¶ÔÓ¦
+µÄ»º³åÇøÀï¡£²¢ÇÒ£¬¶ÔµÚ¶þ¸öÎÄ¼þµÄÐÞ¸ÄÒ²²»»áÓ°Ïìµ½µÚÒ»¸öÎÄ¼þ¡£ÕâºÜÓÐÓÃ£¬
+µ«ÊÇÒ²Í¦Âé·³£ºÒòÎªÈç¹ûÄãÏëÒª´æ´¢µÚÒ»¸öÎÄ¼þ£¬»¹ÐèÒªÏÈ C-x C-f ÇÐ»»»ØÈ¥ÔÙ
+ÓÃ C-x C-s ´æÅÌ¡£ÄãÐèÒªÒ»¸ö¸ü¼ò±ãµÄ·½·¨£¬¶ø Emacs ÒÑ¾­ÎªÄã×¼±¸ºÃÁË£º
+fjdafdajflafafkdfk
+        C-x s   ±£´æ¶à¸ö»º³åÇø
+
+C-x s »áÕÒ³öËùÓÐÒÑ±»ÐÞ¸Äµ«ÉÐÎ´´æÅÌµÄ»º³åÇø£¬È»ºóÏòÄãÖð¸öÑ¯ÎÊ£ºÊÇ·ñÐèÒª
+´æÅÌ£¿
+
+>> ²åÈëÒ»ÐÐÎÄ×Ö£¬È»ºóÊäÈë C-x s¡£
+   ËüÓ¦¸Ã»áÎÊÄã£¬ÊÇ·ñÒª´¢´æÃûÎª TUTORIAL.cn µÄ»º³åÇø£¿
+   °´¡°y¡±¸æËßËüÄãÏë´æÅÌ¡£
+
+
+* ÃüÁî¼¯À©Õ¹£¨EXTENDING THE COMMAND SET£©
+-----------------------------------------
+
+Emacs µÄÃüÁî¾ÍÏñÌìÉÏµÄÐÇÐÇ£¬ÊýÒ²Êý²»Çå¡£°ÑËüÃÇ¶¼¶ÔÓ¦µ½ CONTROL ºÍ META
+×éºÏ¼üÉÏÏÔÈ»ÊÇ²»¿ÉÄÜµÄ¡£Emacs ÓÃÀ©Õ¹£¨eXtend£©ÃüÁîÀ´½â¾öÕâ¸öÎÊÌâ£¬À©Õ¹
+ÃüÁîÓÐÁ½ÖÖ·ç¸ñ£º
+
+        C-x     ×Ö·ûÀ©Õ¹¡£  C-x Ö®ºóÊäÈëÁíÒ»¸ö×Ö·û»òÕß×éºÏ¼ü¡£
+        M-x     ÃüÁîÃûÀ©Õ¹¡£M-x Ö®ºóÊäÈëÒ»¸öÃüÁîÃû¡£
+
+ºÜ¶àÀ©Õ¹ÃüÁî¶¼Ïàµ±ÓÐÓÃ£¬ËäÈ»ÓëÄãÒÑ¾­Ñ§¹ýµÄÃüÁî±ÈÆðÀ´£¬ËûÃÇ¿ÉÄÜ²»ÄÇÃ´³£
+ÓÃ¡£ÎÒÃÇÔçÒÑ¾­¼û¹ýÒ»Ð©À©Õ¹ÃüÁîÁË£¬±ÈÈçÓÃ C-x C-f Ñ°ÕÒÎÄ¼þºÍÓÃ C-x C-s
+±£´æÎÄ¼þ£»ÍË³ö Emacs ÓÃµÄ C-x C-c Ò²ÊÇÀ©Õ¹ÃüÁî¡££¨²»ÓÃµ£ÐÄÍË³ö Emacs »á
+¸øÄã´øÀ´Ê²Ã´ËðÊ§£¬Emacs »áÔÚÍË³öÖ®Ç°ÌáÐÑÄã´æÅÌµÄ£©
+
+ÔÚ¿ØÖÆÌ¨ÏÂ£¬C-z ¿ÉNNÒÔÔÝÊ±Àë¿ª Emacs¡ª¡ªµ±È»£¬Äã»¹¿ÉÒÔÔÙ»ØÀ´¡£
+
+ÔÚÔÊÐí C-z µÄÏµÍ³ÖÐ£¬C-z »á°Ñ Emacs¡°¹ÒÆð¡±£¬Ò²¾ÍÊÇËµ£¬Ëü»á»Øµ½ shell
+** C-z has been rebound, but you can use C-x C-z instead [More] **
+µ«²»ÍË³ö Emacs¡£ÔÚ³£ÓÃµÄ shell ÖÐ£¬Í¨³£¿ÉÒÔÓÃ¡°fg¡±»òÕß¡°%emacs¡±ÃüÁîÔÙ
+´Î»Øµ½ Emacs ÖÐ¡£
+
+ÔÚÃ»ÓÐÌá¹©¹ÒÆð¹¦ÄÜµÄÏµÍ³ÖÐ£¬C-z »áÔÚ Emacs Ö®ÏÂ´´½¨Ò»¸ö×Ó shell À´ÈÃÄã
+ÔËÐÐÆäËü³ÌÐò£¬²¢ÇÒÔÙ´Î¡°»Øµ½¡±Emacs ÖÐ¡ª¡ªËäÈ»ÎÒÃÇ²¢Ã»ÓÐÕæÕýÀë¿ª¹ý¡£Õâ
+ÖÖÇé¿öÏÂ£¬Í¨³£ÓÃ shell ÃüÁî¡°exit¡±´Ó×Ó shell »Øµ½ Emacs¡£
+
+Äã×îºÃÔÚj´òËãÍË³öµÇÂ½µÄÊ±ºòÔÙÓÃ C-X C-C¡£ÔÚ EMACS ±»ÖîÈçÓÊ¼þ´¦Àí³ÌÐòÖ®Àà
+µÄÍâ²¿³ÌÐòµ÷ÓÃÖ®ºó£¬Ò²¿ÉÒÔÓÃ C-X C-C ÍË³ö¡£²»¹ýÒ»°ãÀ´½²£¬Èç¹ûÄã²»ÏëÍË³ö
+µÇÂ¼£¬×îºÃ»¹ÊÇ°Ñ EMACS ¹ÒÆð¶ø²»ÊÇÍË³ö¡£
+
+C-X µÄÀ©Õ¹ÃüÁîÓÐºÜ¶à£¬ÏÂÃæÁÐ³öµÄÊÇÄãÒÑ¾­Ñ§¹ýµÄ£º
+
+        C-X C-F         Ñ°ÕÒÎÄ¼þ¡£
+        C-X C-S         ±£´æÎÄ¼þ¡£
+        C-X C-B         ÁÐ³ö»º³åÇø¡£
+        C-X C-C         Àë¿ª EMACS¡£
+        C-X 1           ¹ØµôÆäËüËùÓÐ´°¸ñ£¬Ö»±£ÁôÒ»¸ö¡£
+        C-X U           ³·Ïú¡£
+
+ÓÃÃüÁîÃûÀ©Õ¹µÄÃüÁîÍ¨³£²¢²»³£ÓÃ£¬»òÖ»ÓÃÔÚ²¿·ÖÄ£Ê½ÏÂ¡£±ÈÈç REPLACE-STRING
+£¨×Ö·û´®Ìæ»»£©Õâ¸öÃüÁî£¬Ëü»áÔÚÈ«ÎÄ·¶Î§ÄÚ°ÑÒ»¸ö×Ö·û´®Ìæ»»³ÉÁíÒ»¸ö¡£ÔÚÊä
+Èë M-X Ö®ºó£¬EMACS »áÔÚÆÁÄ»µ×¶ËÏòÄãÑ¯ÎÊ²¢µÈ´ýÄãÊäÈëÃüÁîÃû¡£Èç¹ûÄãÏëÊäÈë
+¡°REPLACE-STRING¡±£¬ÆäÊµÖ»ÐèÒªÇÃ¡°REPL S<TAB>¡±¾ÍÐÐÁË£¬EMACS »á°ïÄã×Ô¶¯
+²¹Æë¡£ÊäÈëÍêÖ®ºó°´ <RETURN> ¡£
+
+×Ö·û´®Ìæ»»ÃüÁîÐèÒªÁ½¸ö²ÎÊý¡ª¡ª±»Ìæ»»µÄ×Ö·û´®ºÍÓÃÀ´Ìæ»»ËüµÄ×Ö·û´®¡£Ã¿¸ö
+²ÎÊýµÄÊäÈë¶¼ÒÔ»»ÐÐ·ûÀ´½áÊø¡£
+jfdnfd
+>> ½«¹â±êÒÆµ½±¾ÐÐÏÂÃæµÚ¶þÐÐµÄ¿Õ°×´¦£¬È»ºóÊäÈë
+   M-X REPL S<RETURN>CHANGED<RETURN>ALTERED<RETURN>¡£
+
+   ¡¾ÒÔÏÂ±£ÁôÒ»ÐÐÔ­ÎÄ£¬ÒÔÓ¦Á·Ï°Ö®Ðè£º¡¿
+   NOTICE HOW THIS LINE HAS CHANGED: YOU'VE REPLACED... 
+
+Çë×¢ÒâÕâÒ»ÐÐµÄ±ä»¯£ºÔÚ¹â±êÖ®ºóµÄ·¶Î§ÄÚ£¬ÄãÒÑ¾­½«¡°CHANGED¡±Õâ¸ö´Ê¡ª¡ª²»
+ÂÛËüÔÚÄÄÀï³öÏÖ¡ª¡ªÈ«²¿ÓÃ¡°ALTERED¡±Ìæ»»µôÁË¡£
+
+
+* ×Ô¶¯±£´æ£¨AUTO SAVE£©
+-----------------------
+
+Èç¹ûÄãÒÑ¾­ÐÞ¸ÄÁËÒ»¸öÎÄ¼þ£¬µ«ÊÇ»¹Ã»À´µÃ¼°´æÅÌÄãµÄ¼ÆËã»ú¾Í°Õ¹¤ÁË£¬ÄÇÃ´Äã
+Ëù×öµÄÐÞ¸Ä¾ÍºÜ¿ÉÄÜ»á¶ªÊ§¡£ÎªÁË±ÜÃâÕâÑùµÄ²»ÐÒ·¢Éú£¬EMACS »á¶¨ÆÚ½«ÕýÔÚ±à
+¼­µÄÎÄ¼þÐ´ÈëÒ»¸ö¡°×Ô¶¯±£´æ¡±ÎÄ¼þÖÐ¡£×Ô¶¯±£´æÎÄ¼þµÄÎÄ¼þÃûµÄÍ·Î²¸÷ÓÐÒ»¸ö
+¡°#¡±×Ö·û£¬±ÈÈçÄãÕýÔÚ±à¼­µÄÎÄ¼þ½Ð¡°HELLO.C¡±£¬ÄÇÃ´ËüµÄ×Ô¶¯±£´æÎÄ¼þ¾Í½Ð
+¡°#HELLO.C#¡±¡£Õâ¸öÎÄ¼þ»áÔÚÕý³£´æÅÌÖ®ºó±» EMACS É¾³ý¡£
+
+ËùÒÔ£¬¼ÙÈç²»ÐÒÕæµÄ·¢ÉúÁË£¬Äã´ó¿ÉÒÔ´ÓÈÝµØ´ò¿ªÔ­À´µÄÎÄ¼þ£¨×¢Òâ²»ÊÇ×Ô¶¯±£
+´æÎÄ¼þ£©È»ºóÊäÈë M-X RECOVER FILE<RETURN> À´»Ö¸´ÄãµÄ×Ô¶¯±£´æÎÄ¼þ¡£ÔÚÌá
+Ê¾È·ÈÏµÄÊ±ºò£¬ÊäÈë YES<RETURN>¡£
+
+
+* »ØÏÔÇø£¨ECHO AREA£©
+---------------------
+
+Èç¹û EMACS ·¢ÏÖÄãÊäÈë¶à×Ö·ûÃüÁîµÄ½Ú×àºÜÂý£¬Ëü»áÔÚ´°¸ñµÄÏÂ·½³ÆÎª¡°»ØÏÔÇø¡±
+µÄµØ·½¸øÄãÌáÊ¾¡£»ØÏÔÇøÎ»ÓÚÆÁÄ»µÄ×îÏÂÃæÒ»ÐÐ¡£
+
+
+* ×´Ì¬À¸£¨MODE LINE£©
+---------------------
+
+Î»ÓÚ»ØÏÔÇøÕýÉÏ·½µÄÒ»ÐÐ±»³ÆÎª¡°×´Ì¬À¸¡±¡£×´Ì¬À¸ÉÏ»áÏÔÊ¾Ò»Ð©ÐÅÏ¢£¬±ÈÈç£º
+
+--:**  TUTORIAL.CN       (FUNDAMENTAL)--L670--54%----------------
+
+×´Ì¬À¸ÏÔÊ¾ÁË EMACS µÄ×´Ì¬ºÍÄãÕýÔÚ±à¼­µÄÎÄ×ÖµÄÒ»Ð©ÐÅÏ¢¡£
+
+ÄãÓ¦¸ÃÖªµÀÎÄ¼þÃûµÄÒâË¼°É£¿¾ÍÊÇÄãÕÒµ½µÄÄÇ¸öÎÄ¼þÂï¡£-NN%-- ÏÔÊ¾µÄÊÇ¹â±êÔÚ
+È«ÎÄÖÐµÄÎ»ÖÃ¡£Èç¹ûÎ»ÓÚÎÄ¼þµÄ¿ªÍ·£¬ÄÇÃ´¾ÍÏÔÊ¾ --TOP-- ¶ø²»ÊÇ --00%--£»Èç
+¹ûÎ»ÓÚÎÄ¼þµÄÄ©Î²£¬¾ÍÏÔÊ¾ --BOT--¡£Èç¹ûÎÄ¼þºÜÐ¡£¬Ò»ÆÁ¾Í×ãÒÔÏÔÊ¾È«²¿ÄÚÈÝ£¬
+ÄÇÃ´×´Ì¬À¸»áÏÔÊ¾ --ALL--¡£
+
+¡°L¡± ºÍÆäºóµÄÊý×Ö¸ø³öÁË¹â±êËùÔÚÐÐµÄÐÐºÅ¡£
+
+×î¿ªÍ·µÄÐÇºÅ£¨*£©±íÊ¾ÄãÒÑ¾­¶ÔÎÄ×Ö×ö¹ý¸Ä¶¯¡£¸Õ¸Õ´ò¿ªµÄÎÄ¼þ¿Ï¶¨Ã»ÓÐ±»¸Ä¶¯
+¹ý£¬ËùÒÔ×´Ì¬À¸ÉÏÏÔÊ¾µÄ²»ÊÇÐÇºÅ¶øÊÇ¶ÌÏß£¨-£©¡£
+
+×´Ì¬À¸ÉÏÐ¡À¨ºÅÀïµÄÄÚÈÝ¸æËßÄãµ±Ç°ÕýÔÚÊ¹ÓÃµÄ±à¼­Ä£Ê½¡£È±Ê¡µÄÄ£Ê½ÊÇ
+FUNDAMENTAL£¬¾ÍÊÇÄãÏÖÔÚÕýÔÚÊ¹ÓÃµÄÕâ¸ö¡£ËüÊÇÒ»ÖÖ¡°Ö÷Ä£Ê½¡±¡£
+
+EMACS µÄÖ÷Ä£Ê½ÁÖÁÖ×Ü×Ü¡£ÓÐÓÃÀ´±à¼­³ÌÐò´úÂëµÄ¡ª¡ª±ÈÈç LISP Ä£Ê½£»Ò²ÓÐÓÃ
+À´±à¼­¸÷ÖÖ×ÔÈ»ÓïÑÔÎÄ±¾µÄ¡ª¡ª±ÈÈç TEXT Ä£Ê½¡£ÈÎºÎÇé¿öÏÂÖ»ÄÜÓ¦ÓÃÒ»¸öÖ÷Ä£
+Ê½£¬ÆäÃû³Æ»áÏÔÊ¾ÔÚ×´Ì¬À¸ÉÏ£¬Ò²¾ÍÊÇÏÖÔÚÏÔÊ¾¡°FUNDAMENTAL¡±µÄµØ·½¡£
+
+Ö÷Ä£Ê½Í¨³£»á¸Ä±äÒ»Ð©ÃüÁîµÄÐÐÎª¡£±È·½Ëµ£¬²»¹Ü±à¼­Ê²Ã´ÓïÑÔµÄ³ÌÐò´úÂë£¬Äã
+¶¼¿ÉÒÔÓÃÒ»¸öÏàÍ¬µÄÃüÁîÀ´Ìí¼Ó×¢ÊÍ¡£µ«ÊÇÔÚ²»Í¬µÄÓïÑÔÖÐ×¢ÊÍµÄÓï·¨ÍùÍùÊÇ²»
+NNNÍ¬µÄ£¬ÕâÊ±²»Í¬µÄÖ÷Ä£Ê½¾Í»áÓÃ¸÷×Ô²»Í¬µÄÓï·¨¹æÔòÀ´Ìí¼Ó×¢ÊÍ¡£Ö÷Ä£Ê½¶¼ÊÇ¿É
+ÒÔÓÃ M-X Æô¶¯µÄÀ©Õ¹ÃüÁî£¬M-X FUNDAMENTAL-MODE ¾Í¿ÉÒÔÇÐ»»µ½ FUNDAMENTAL
+Ä£Ê½¡£
+
+±à¼­×ÔÈ»ÓïÑÔÎÄ±¾¡ª¡ª±ÈÈçÏÖÔÚ¡ª¡ªÓ¦¸ÃÓÃ TEXT Ä£Ê½¡£
+
+>> ÊäÈë M-X TEXT MODE<RETURN>¡£
+
+±ðµ£ÐÄ£¬Ê²Ã´¶¼Ã»±ä¡£²»¹ýÏ¸ÐÄÒ»Ð©¿ÉÒÔ·¢ÏÖ£¬M-F ºÍ M-B ÏÖÔÚ°Ñµ¥ÒýºÅ£¨'£©
+ÊÓÎª´ÊµÄÒ»²¿·ÖÁË¡£¶øÔÚÏÈÇ°µÄ FUNDAMENTAL Ä£Ê½ÖÐ£¬M-F ºÍ M-B ¶¼½«µ¥ÒýºÅ
+ÊÓÎª·Ö¸ôµ¥´ÊµÄ·ûºÅ¡£
+
+Ö÷Ä£Ê½Í¨³£¶¼»á¸ãÒ»Ð©ÀàËÆµÄÐ¡¶¯×÷£¬ÒòÎªºÜ¶àÃüÁîÆäÊµÍê³ÉµÄÊÇ¡°ÏàÍ¬µÄ¹¤
+×÷¡±£¬Ö»ÊÇÔÚ²»Í¬»·¾³ÏÂ»áÓÐ²»Í¬µÄ¹¤×÷·½Ê½¶øÒÑ¡£¡¾ËùÎ½¡°ÇóÍ¬´æÒì¡±£¬ÔÚ
+EMACS ÀïµÃµ½ÁËºÜºÃµÄÌåÏÖ¡¿
+
+ÓÃ C-H M ¿ÉÒÔ²é¿´µ±Ç°Ö÷Ä£Ê½µÄÎÄµµ¡£
+
+>> ÓÃ C-U C-V ½«±¾ÐÐ´øµ½ÆÁÄ»µÄ×îÉÏ·½¡£
+>> ÊäÈë C-H M£¬¿´¿´ TEXT Ä£Ê½Óë FUNDAMENTAL Ä£Ê½ÓÐÄÄÐ©²»Í¬¡£
+>> ÊäÈë C-X 1 ¹ØµôÎÄµµ´°¸ñ¡£
+
+Ö÷Ä£Ê½Ö®ËùÒÔ³ÆÖ®Îª¡°Ö÷£¨MAJOR£©¡±Ä£Ê½£¬ÊÇÒòÎªÍ¬Ê±»¹ÓÐ¡°¸¨Ä£Ê½¡±£¨MINOR
+MODE£©´æÔÚ¡£¸¨Ä£Ê½²¢²»ÄÜÌæ´úÖ÷Ä£Ê½£¬¶øÊÇÌá¹©Ò»Ð©¸¨ÖúµÄ¹¦ÄÜ¡£Ã¿¸ö¸¨Ä£Ê½
+¶¼¿ÉÒÔ¶ÀÁ¢µØ¿ªÆôºÍ¹Ø±Õ£¬¸úÆäËü¸¨Ä£Ê½ÎÞ¹Ø£¬¸úÖ÷Ä£Ê½Ò²ÎÞ¹Ø¡£ËùÒÔÄã¿ÉÒÔ²»
+Ê¹ÓÃ¸¨Ä£Ê½£¬Ò²¿ÉÒÔÖ»Ê¹ÓÃÒ»¸ö»òÍ¬Ê±Ê¹ÓÃ¶à¸ö¸¨Ä£Ê½¡£
+
+ÓÐÒ»¸ö½Ð×ö×Ô¶¯ÕÛÐÐ£¨AUTO FILL£©µÄ¸¨Ä£Ê½ºÜÓÐÓÃ£¬ÌØ±ðÊÇÔÚ±à¼­×ÔÈ»ÓïÑÔÎÄ±¾
+µÄÊ±ºò¡£ÆôÓÃ×Ô¶¯ÕÛÐÐºó£¬EMACS »áÔÚÄã´ò×Ö³¬³öÒ»ÐÐ±ß½çÊ±×Ô¶¯ÌæÄã»»ÐÐ¡£
+
+ÓÃ M-X AUTO FILL MODE<RETURN> Æô¶¯×Ô¶¯ÕÛÐÐÄ£Ê½¡£ÔÙÓÃÒ»´ÎÕâÌõÃüÁî£¬×Ô¶¯
+ÕÛÐÐÄ£Ê½»á±»¹Ø±Õ¡£Ò²¾ÍÊÇËµ£¬Èç¹û×Ô¶¯ÕÛÐÐÄ£Ê½Ã»ÓÐ±»¿ªÆô£¬Õâ¸öÃüÁî»á¿ªÆô
+Ëü£»Èç¹ûÒÑ¾­¿ªÆôÁË£¬Õâ¸öÃüÁî»á¹Ø±ÕËü¡£ËùÒÔÎÒÃÇËµ£¬Õâ¸öÃüÁî¿ÉÒÔÓÃÀ´¡°¿ª
+¹Ø£¨TOGGLE£©¡±Ä£Ê½¡£
+       KDLFNADSN  DFDFAN  DFASNF  KDFDSN DKNFIDSA N N NDNF KSANF N N IDNIFS NIFN N N NDSNF ID NDIF N N N DFN IDFID FND NJFDNFDISAIAD N DFAN D  DJFSAF  DNFID  DDN I IDFN D DFA KDNF NKDDN FKDNFDSAD;LKSF A;DFN N NDDF;N D;KFA D N 
+>> ÏÖÔÚÊäÈë M-X AUTO FILL MODE<RETURN>¡£È»ºóËæ±ãÇÃµãÊ²Ã´£¬Ö±µ½Äã¿´µ½Ëü
+   ·Ö³ÉÁ½ÐÐ¡£Äã±ØÐëÇÃÒ»Ð©¿Õ¸ñ£¬ÒòÎª AUTO FILL Ö»ÔÚ¿Õ°×´¦½øÐÐ¶ÏÐÐ¡£
+   ¡¾ÊäÈë¿Õ¸ñ¶ÔÓ¢ÎÄÀ´ËµÊÇ±ØÐëµÄ£¬¶ø¶ÔÖÐÎÄÔò²»±Ø¡£¡¿
+
+ÐÐ±ß½çÍ¨³£±»Éè¶¨Îª 70 ¸ö×Ö·û¡¾ÕâÀïÖ¸Ó¢ÎÄ×Ö·û¡¿£¬Äã¿ÉÒÔÓÃ C-X F ÃüÁîÅäºÏ
+Êý×Ö²ÎÊýÀ´ÖØÐÂÉè¶¨Ëü¡£
+
+
+
+>> ÊäÈë C-X F ²¢´«µÝ²ÎÊý 20£º C-U 2 0 C-X F¡£
+   È»ºóÊäÈëÒ»Ð©ÎÄ×Ö£¬¹Û²ì EMACS µÄ×Ô¶¯ÕÛÐÐ¶¯×÷
+   ×îºóÔÙÓÃ C-X F ½«±ß½çÉè»Ø 70¡£
+   FDSAFDNIDNDKDDKDJDJDJDKANFFFFFFFFFFFFFFF.,DFD.FOEL.DFEINF..DFJAD  DLJF D J IDFI DJFIEWNC DF IDOSF N NDFD KFDF KJ  KJLKJKJK 
+Èç¹ûÄãÔÚ¶ÎÂäµÄÖÐ¼ä×öÁËÒ»Ð©ÐÞ¸Ä£¬ÄÇÃ´×Ô¶¯ÕÛÐÐÄ£Ê½²»»áÌæÄã°ÑÕû¸ö¶ÎÂäÖØÐÂ
+ÕÛÐÐ£¬ÄãÐèÒªÓÃ M-Q ÊÖ¶¯ÕÛÐÐ¡£×¢Òâ£¬¹â±ê±ØÐëÎ»ÓÚÄãÐèÒªÕÛÐÐµÄÄÇÒ»¶ÎÀï¡£
+
+>> ÒÆ¶¯¹â±êµ½Ç°Ò»¶ÎÖÐ£¬È»ºóÊäÈë M-Q¡£
+
+
+* ËÑË÷£¨SEARCHING£©
+-------------------
+
+Emacs ¿ÉÒÔÏòÇ°»òÏòºóËÑË÷×Ö·û´®¡£ËÑË÷ÃüÁîÊÇÒ»¸öÒÆ¶¯¹â±êµÄÃüÁî£ºËÑË÷³É¹¦
+ºó£¬¹â±ê»áÍ£ÁôÔÚËÑË÷Ä¿±ê³öÏÖµÄµØ·½¡£
+e
+Emacs µÄËÑË÷ÃüÁîµÄ¶ÀÌØÖ®´¦ÔÚÓÚ£¬ËüÊÇ¡°½¥½øµÄ£¨incremental£©¡±¡£ÒâË¼ÊÇËÑ
+Ë÷ÓëÊäÈëÍ¬Ê±½øÐÐ£ºÄãÔÚ¼üÅÌÉÏÒ»×ÖÒ»¾äµØÊäÈëËÑË÷´ÊµÄ¹ý³ÌÖÐ£¬Emacs ¾ÍÒÑ¾­
+¿ªÊ¼ÌæÄãËÑË÷ÁË¡£
+
+C-s ÊÇÏòÇ°ËÑË÷£¬C-r ÊÇÏòºóËÑË÷¡£²»¹ýÊÖ±ðÕâÃ´¿ì£¡±ð×Å¼±ÊÔ¡£
+
+ÔÚ°´ÏÂ C-s Ö®ºó£¬»ØÏÔÇøÀï»áÓÐ¡°I-search¡±×ÖÑù³öÏÖ£¬±íÃ÷Ä¿Ç° Emacs Õý´¦
+ÓÚ¡°½¥½øËÑË÷¡±×´Ì¬£¬²¢µÈ´ýÄãÊäÈëËÑË÷×Ö´®¡£°´ <Return> ¿ÉÒÔ½áÊøËÑË÷¡£
+
+>> ÊäÈë C-s ¿ªÊ¼Ò»¸öËÑË÷¡£×¢ÒâÇÃÂýÒ»µã£¬Ò»´ÎÊäÈëÒ»¸ö×Ö·û¡£
+   ÂýÂýÊäÈë¡°cursor¡±Õâ¸ö´Ê£¬Ã¿ÇÃÒ»¸ö×Ö¶¼Í£¶ÙÒ»ÏÂ²¢¹Û²ì¹â±ê¡£
+   ÏÖÔÚÄãÓ¦¸ÃÒÑÔø¾­ÕÒµ½¡°cursor¡±Õâ¸ö´ÊÁË¡£
+>> ÔÙ°´Ò»´Î C-s£¬ËÑË÷ÏÂÒ»¸ö¡°cursor¡±³öÏÖµÄÎ»ÖÃ¡£
+>> ÏÖÔÚ°´ËÄ´ÎÍË¸ñ¼ü£¬¿´¿´¹â±êÊÇÈçºÎÒÆ¶¯µÄ¡£
+>> ÇÃ <Return> ½áÊøËÑË÷¡£
+
+¿´×ÐÏ¸ÁËÃ´£¿ÔÚÒ»´Î½¥½øÊ½ËÑË÷ÖÐ£¬Emacs »á³¢ÊÔÌøµ½ËÑË÷Ä¿±ê³öÏÖµÄÎ»ÖÃ¡£Òª
+Ìøµ½ÏÂÒ»¸öÃüÖÐÎ»ÖÃ£¬¾ÍÔÙ°´Ò»´Î C-s¡£Èç¹ûÕÒ²»µ½Ä¿±ê£¬Emacs »á·¢³ö¡°ßÙ¡±
+µÄÒ»Éù£¬¸æËßÄãËÑË÷Ê§°Ü¡£ÔÚÕû¸ö¹ý³ÌÖÐ£¬¶¼¿ÉÒÔÓÃ C-g À´ÖÕÖ¹ËÑË÷¡£¡¾Äã»á·¢
+ÏÖ C-g »áÈÃ¹â±ê»Øµ½ËÑË÷¿ªÊ¼µÄÎ»ÖÃ£¬¶ø <Return> ÔòÈÃ¹â±êÁôÔÚËÑË÷½á¹ûÉÏ£¬
+ÕâÊÇºÜÓÐÓÃµÄ¹¦ÄÜ¡£¡¿
+
+×¢Òâ£ºÔÚÄ³Ð©ÖÕ¶ËÏÂ£¬ÊäÈë C-x C-s »á¶³½áÆÁÄ»¡¾ÆÁÄ»Ã»ÓÐÈÎºÎÊä³ö¡¿£¬Ê¹Äã¿´
+²»µ½ Emacs µÄÈÎºÎ±ä»¯¡£ÆäÔ­ÒòÊÇ²Ù×÷ÏµÍ³µÄ¡°Á÷Á¿¿ØÖÆ¡±¹¦ÄÜÀ¹½ØÁË C-s ²¢
+¶³½áÁËÆÁÄ»¡£ÓÃ C-q ¿ÉÒÔ½â³ýÆÁÄ»¶³½á¡£Òª½â¾öÕâ¸öÎÊÌâ£¬Çë²Î¿¼ Emacs ÊÖ²á
+ÀïµÄ¡°Spontaneous Entry to Incremental Search¡±Ò»½Ú¡¾Emacs ÊÖ²á¿ÉÄÜ»¹Ã»
+ÓÐÖÐÎÄ·­Òë¡¿£¬ÄÇÀïÌá¹©ÁËÒ»Ð©ÓÐÓÃµÄ½¨Òé¡£
+
+ÔÚ½¥½øÊ½ËÑË÷ÖÐ£¬°´ÍË¸ñ¼ü»áÉ¾³ýÄ¿±ê×Ö·û´®µÄ×îºóÒ»¸ö×Ö·û£¬²¢ÇÒ¹â±ê»á»Øµ½
+×î½üÒ»´ÎËÑË÷µÄÃüÖÐÎ»ÖÃ¡£±ÈÈçÄãÒÑ¾­ÊäÈëÁË¡°c¡±£¬¹â±ê¾ÍÍ£ÔÚ¡°c¡±µÚÒ»´Î³ö
+ÏÖµÄÎ»ÖÃ£¬ÔÙÊäÈë¡°u¡±£¬¹â±êÍ£ÔÚ¡°cu¡±µÚÒ»´Î³öÏÖµÄÎ»ÖÃ£¬ÕâÊ±ÔÙ°´ÍË¸ñ¼ü£¬
+¡°u¡±¾Í´ÓËÑË÷×Ö´®ÖÐÏûÊ§ÁË£¬È»ºó¹â±ê»á»Øµ½¡°c¡±µÚÒ»´Î³öÏÖµÄÎ»ÖÃ¡£
+
+ÁíÍâ£¬Èç¹ûÄãÔÚËÑË÷µÄÊ±ºòÊäÈëÁË CONTROL »òÕß META ×éºÏ¼üµÄ»°£¬ËÑË÷¿ÉÄÜ»á
+½áÊø¡££¨Ò²ÓÐÀýÍâ£¬±ÈÈç C-s ºÍ M-r ÕâÐ©ÓÃÓÚËÑË÷µÄÃüÁî¡££©
+
+Ç°ÃæËµµÄ¶¼ÊÇ¡°ÏòÏÂ¡±ËÑË÷£¬Èç¹ûÏë¡°ÏòÉÏ¡±ËÑË÷£¬¿ÉÒÔÓÃ C-r¡£C-r Óë C-s
+Ïà±È³ýÁËËÑË÷·½ÏòÏà·´Ö®Íâ£¬ÆäÓàµÄ²Ù×÷¶¼Ò»Ñù¡£
+
+
+* ¶à´°¸ñ£¨MULTIPLE WINDOWS£©
+----------------------------
+
+
+
+
+Emacs µÄÃÔÈËÖ®´¦ºÜ¶à£¬ÄÜ¹»ÔÚÆÁÄ»ÉÏÍ¬Ê±ÏÔÊ¾¶à¸ö´°¸ñ¾ÍÊÇÆäÖÐÖ®Ò»¡£
+
+>> ÒÆ¶¯¹â±êµ½ÕâÒ»ÐÐ£¬È»ºóÊäÈë C-u 0 C-l¡£
+
+>> ÏÖÔÚÊäÈë C-x 2£¬Ëü»á½«ÆÁÄ»»®·Ö³ÉÁ½¸ö´°¸ñ¡£
+   ÕâÁ½¸ö´°¸ñÀïÏÔÊ¾µÄ¶¼ÊÇ±¾Æª¿ìËÙÖ¸ÄÏ£¬¶ø¹â±êÔòÍ£ÁôÔÚÉÏ·½µÄ´°¸ñÀï¡£
+
+>> ÊÔÊÔÓÃ C-M-v ¹ö¶¯ÏÂ·½µÄ´°¸ñ¡£
+   £¨Èç¹ûÄã²¢Ã»ÓÐ META ¼ü£¬ÓÃ ESC C-v Ò²¿ÉÒÔ¡££©
+   ¡¾ÏòÉÏ¹ö¶¯ÊÇ C-M-S-v£¬Ò²¾ÍÊÇÍ¬Ê±°´×¡ CONTROL¡¢META ºÍ SHIFT ÔÙ°´ v¡¿
+>> ÊäÈë C-x o£¨¡°o¡±Ö¸µÄÊÇ¡°ÆäËü£¨other£©¡±£©£¬
+   ½«¹â±ê×ªÒÆµ½ÏÂ·½µÄ´°¸ñ¡£
+
+>> ÔÚÏÂ·½µÄ´°¸ñÖÐ£¬ÓÃ C-v ºÍ M-v À´¹ö¶¯¡£
+   Í¬Ê±¼ÌÐøÔÚÉÏ·½µÄ´°¸ñÀïÔÄ¶ÁÕâÐ©Ö¸µ¼¡£
+
+>> ÔÙÊäÈë C-x o ½«¹â±êÒÆ»Øµ½ÉÏ·½µÄ´°¸ñÀï¡£
+   ¹â±ê»á»Øµ½ËüÔÚÉÏ·½´°¸ñÖÐÔ­±¾ËùÔÚµÄÎ»ÖÃ¡£
+
+Á¬ÐøÊ¹ÓÃ C-x o ¿ÉÒÔ±éÀúËùÓÐ´°¸ñ¡£Ã¿Ò»¸ö´°¸ñ¶¼ÓÐËü×Ô¼ºµÄ¹â±êÎ»ÖÃ£¬µ«ÊÇÖ»
+ÓÐÒ»¸ö´°¸ñ»áÕæÕýÏÔÊ¾Õâ¸ö¹â±ê¡£¡¾ÆäËü´°¸ñÔÚ¿ØÖÆÌ¨ÏÂ²»»áÏÔÊ¾¹â±ê£¬ÔÚÍ¼ÐÎ
+´°¿ÚÏÂÈ±Ê¡ÏÔÊ¾ÎªïÎ¿Õ¹â±ê¡£¡¿Ò»°ãËùÓÐµÄ±à¼­ÃüÁî¶¼×÷ÓÃÓÚÕâ¸ö¹â±êËùÔÚµÄ´°
+¸ñ£¬ÎÒÃÇ³ÆÕâ¸ö´°¸ñÎª¡°±»Ñ¡ÖÐµÄ´°¸ñ¡±¡£
+
+µ±ÄãÔÚÒ»¸ö´°¸ñÖÐ±à¼­£¬µ«ÓÃÁíÒ»¸ö´°¸ñ×÷Îª²Î¿¼µÄÊ±ºò£¬C-M-v ÊÇºÜÓÐÓÃµÄÃü
+Áî¡£
+
+Äã¿ÉÒÔÊ¼ÖÕ´¦ÓÚ±à¼­´°¸ñÖÐ£¬È»ºóÓÃ C-M-v ÃüÁî¹ö¶¯ÁíÍâÒ»¸ö´°¸ñ¡£¡¾±ÈÈç
+·­ÒëºÍÐ£¶Ô¾ÍºÜÊÊºÏÓÃÕâÖÖ·½Ê½½øÐÐ¡£¡¿
+
+C-M-v ÊÇÒ»¸ö CONTROL-META ×éºÏ¼ü¡£Èç¹ûÄãÓÐ META ¼üµÄ»°£¬¿ÉÒÔÍ¬Ê±°´×¡
+CONTROL ºÍ META ¼ü²¢ÊäÈë v¡£CONTROL ºÍ META ¼üÏÈ°´ÄÄ¸ö¶¼¿ÉÒÔ£¬ÒòÎªËüÃÇ
+Ö»ÊÇÓÃÀ´¡°ÐÞÊÎ£¨modify£©¡±ÄãÊäÈëµÄ×Ö·ûµÄ¡£
+
+Èç¹ûÄã²¢Ã»ÓÐ META ¼ü£¬ÄãÒ²¿ÉÒÔÓÃ ESC À´´úÌæ£¬²»¹ýÕâÑùµÄ»°¾ÍÒª×¢Òâ°´¼üË³
+ÐòÁË£ºÄã±ØÐëÏÈÊäÈë ESC £¬È»ºóÔÙÊäÈë CONTROL-v¡£CONTROL-ESC v ÊÇÃ»ÓÃµÄ£¬
+ÒòÎª ESC ±¾ÉíÊÇÒ»¸ö×Ö·û¼ü£¬¶ø²»ÊÇÒ»¸öÐÞÊÎ¼ü£¨modifier key£©¡£
+
+>> £¨ÔÚÉÏ·½´°¸ñÀï£©ÊäÈë C-x 1 ¹ØµôÏÂ·½´°¸ñ¡£
+
+£¨Èç¹ûÄãÔÚÏÂ·½µÄ´°¸ñÀïÊäÈë C-x 1£¬ÄÇÃ´¾Í»á¹ØµôÉÏ·½µÄ´°¸ñ¡£Äã¿ÉÒÔ°ÑÕâ¸ö
+ÃüÁî¿´³ÉÊÇ¡°Ö»±£ÁôÒ»¸ö´°¸ñ¡±¡ª¡ª¾ÍÊÇÎÒÃÇÕýÔÚ±à¼­µÄÕâ¸ö¡££©
+
+²»Í¬µÄ´°¸ñ¿ÉÒÔÏÔÊ¾²»Í¬µÄ»º³åÇø¡£Èç¹ûÄãÔÚÒ»¸ö´°¸ñÀïÓÃ C-x C-f ´ò¿ªÁËÒ»¸ö
+ÎÄ¼þ£¬ÁíÒ»¸ö´°¸ñ²¢²»»á·¢ÉúÊ²Ã´±ä»¯¡£ÈÎºÎÒ»¸ö´°¸ñÀï¶¼¿ÉÒÔÓÃÀ´´ò¿ªÎÄ¼þ¡£
+
+ÓÃÏÂÃæµÄ·½·¨¿ÉÒÔÔÚÒ»¸öÐÂ¿ª´°¸ñÀï´ò¿ªÎÄ¼þ£º
+
+>> ÊäÈë C-x 4 C-f£¬½ô¸ú×ÅÊäÈëÒ»¸öÎÄ¼þÃû£¬ÔÙÓÃ <Return> ½áÊø¡£
+   ¿ÉÒÔ¿´µ½ÄãÖ¸¶¨µÄÎÄ¼þ³öÏÖÔÚÏÂ·½µÄ´°¸ñÖÐ£¬Í¬Ê±¹â±êÒ²Ìøµ½ÁËÄÇÀï¡£
+
+>> ÊäÈë C-x o »Øµ½ÉÏ·½µÄ´°¸ñ£¬È»ºóÔÙÓÃ C-x 1 ¹ØµôÏÂ·½´°¸ñ¡£
+
+
+* µÝ¹é±à¼­£¨RECURSIVE EDITING LEVELS£©
+--------------------------------------
+
+ÓÐÊ±ºòÄã»á½øÈëËùÎ½µÄ¡°µÝ¹é±à¼­¡±¡£µÝ¹é±à¼­×´Ì¬ÓÉÎ»ÓÚ×´Ì¬À¸µÄ·½À¨ºÅËùÖ¸
+Ê¾£¬ÆäÖÐ°üº¬ÁËÓÃÐ¡À¨ºÅÀ´Ö¸Ã÷µÄÄ£Ê½Ãû³Æ¡£±ÈÈçËµ£¬ÄãÓÐÊ±¿ÉÄÜ»á¿´µ½
+[(Fundamental)]£¬¶ø²»ÊÇ (Fundamental)¡£¡¾±ÈÈçÔÚÓÃ M-% ½øÐÐ½»»¥Ê½Ìæ»»µÄ
+Ê±ºòÄãÓÖÓÃÁË C-s ½øÐÐËÑË÷£¬ÕâÊ±Ìæ»»Ä£Ê½²¢Ã»ÓÐ½áÊø£¬µ«ÄãÓÖ½øÈëÁËËÑË÷Ä£Ê½£¬
+Õâ¾ÍÊÇËùÎ½µÄµÝ¹é±à¼­¡£¡¿
+
+Àë¿ªµÝ¹é±à¼­¿ÉÒÔÓÃ ESC ESC ESC¡£ÕâÊÇÒ»¸ö×îÍ¨ÓÃµÄ¡°Àë¿ª¡±ÃüÁî£¬ÄãÉõÖÁ¿É
+** ESC ESC ESC has been rebound, but you can use M-x keyboard-escape-quit instead [More] **
+ÒÔÊ¹ÓÃËüÀ´¹Øµô¶àÓàµÄ´°¸ñ£¬»òÕßÀë¿ªÐ¡»º³å¡£
+
+>> ÊäÈë M-x ½øÈëÐ¡»º³å£»È»ºóÊäÈë ESC ESC ESC Àë¿ª¡£
+
+Äã²»ÄÜÓÃ C-g ÍË³öµÝ¹é±à¼­£¬ÒòÎª C-g µÄ×÷ÓÃÊÇÈ¡Ïû¡°±¾²ãµÝ¹é±à¼­Ö®ÄÚ¡±µÄ
+ÃüÁîºÍÆä²ÎÊý£¨arguments£©¡£
+
+
+* »ñµÃ¸ü¶à°ïÖú£¨GETTING MORE HELP£©
+-----------------------------------
+
+±¾¿ìËÙÖ¸ÄÏµÄÄ¿µÄ½ö½öÊÇ°ïÖúÄãÔÚ Emacs µÄº£ÑóÀïÏÂË®£¬²»ÖÁÓÚÊøÊÖÎÞ²ßÍûÑóÐË
+Ì¾¡£ÓÐ¹Ø Emacs µÄ»°Ìâ¿ÉÎ½º¹Å£³ä¶°£¬ÕâÀï×ÔÈ»ÊÇÄÑ¾¡ÍòÒ»¡£²»¹ý Emacs ºÜÀí
+½âÄãÇóÖªÈô¿ÊµÄÐÄÇé£¬ÒòÎªËüÌá¹©µÄÇ¿´ó¹¦ÄÜÊµÔÚÊÇÌ«¶àÁË¡£Îª´Ë£¬Emacs Ìá¹©
+ÁËÒ»Ð©ÃüÁîÀ´²é¿´ Emacs µÄÃüÁîÎÄµµ£¬ÕâÐ©ÃüÁî¶¼ÒÔ CONTROL-h ¿ªÍ·£¬Õâ¸ö×Ö
+·ûÒ²Òò´Ë±»³ÆÎª¡°°ïÖú£¨Help£©×Ö·û¡±¡£
+
+ÒªÊ¹ÓÃ°ïÖú£¨Help£©¹¦ÄÜ£¬ÇëÏÈÊäÈë C-h£¬È»ºóÔÙÊäÈëÒ»¸ö×Ö·ûÒÔËµÃ÷ÄãÐèÒªÊ²
+Ã´°ïÖú¡£Èç¹ûÄãÁ¬×Ô¼ºµ½µ×ÐèÒªÊ²Ã´°ïÖú¶¼²»ÖªµÀ£¬ÄÇÃ´¾ÍÊäÈë C-h ?£¬Emacs
+»á¸æËßÄãËüÄÜÌá¹©ÁËÄÄÐ©°ïÖú¡£Èç¹ûÄã°´ÁË C-h ÓÖÏë·´»Ú£¬¿ÉÒÔÓÃ C-g È¡Ïû¡£
+
+£¨ÓÐÐ©Ö÷»ú¸Ä±äÁË C-h µÄÒâÒå£¬ÕâÖÖÒÔ¼º¶ÈÈËÍâ¼ÓÒ»µ¶ÇÐµÄ×ö·¨È·Êµ²»Ì«ºÃ£¬²»
+¹ýµ¹ÊÇÈÃÄã¿ÉÒÔÒåÕý´ÇÑÏµØ±§Ô¹ËûÃÇµÄÏµÍ³¹ÜÀíÔ±¡£»°Ëµ»ØÀ´£¬Èç¹ûÄã°´ C-h Ö®
+ºóÃ»ÓÐÈÎºÎ°ïÖúÐÅÏ¢ÏÔÊ¾³öÀ´£¬ÄÇÃ´ÊÔÊÔ F1 ¼ü»òÕß M-x help <Return> ¡££©
+
+×î»ù±¾µÄ°ïÖú¹¦ÄÜÊÇ C-h c¡£ÊäÈë C-h c Ö®ºóÔÙÊäÈëÒ»¸ö×éºÏ¼ü£¬Emacs »á¸ø³ö
+Õâ¸öÃüÁîµÄ¼òÒªËµÃ÷¡£
+
+>> ÊäÈë C-h c C-p¡£
+
+ÏÔÊ¾µÄÏûÏ¢Ó¦¸Ã»áÊÇÕâÑù£º
+
+        C-p runs the command previous-line
+
+ÕâÌõÏûÏ¢ÏÔÊ¾ÁË C-p ÃüÁî¶ÔÓ¦µÄº¯ÊýÃû£¬º¯ÊýÃûÖ÷ÒªÓÃÀ´¶¨ÖÆºÍÀ©Õ¹ Emacs¡£Ãü
+ÁîµÄ¹¦ÄÜÓÉº¯ÊýÍê³É£¬ËùÒÔº¯ÊýÃû±¾ÉíÒ²¿ÉÒÔ±»¿´³ÉÊÇ×î¼òµ¥µÄÎÄµµ¡ª¡ªÖÁÉÙ¶Ô
+ÓÚÄãÒÑ¾­Ñ§¹ýµÄÃüÁîÀ´Ëµ£¬ËüÃÇµÄº¯ÊýÃû×ãÒÔ½âÊÍËüÃÇµÄ¹¦ÄÜÁË¡£
+
+¶à×Ö·ûÃüÁîÒ»Ñù¿ÉÒÔÓÃ C-h c À´²é¿´¡£
+
+ÏëµÃµ½¸ü¶àµÄÐÅÏ¢£¬Çë°Ñ C-h c »»³É C-h k ÊÔÊÔ¿´¡£
+
+>> ÊäÈë C-h k C-p¡£
+
+ÉÏÃæµÄÃüÁî»áÐÂ´ò¿ªÒ»¸ö Emacs ´°¸ñÒÔÏÔÊ¾º¯ÊýµÄÃû³Æ¼°ÆäÎÄµµ¡£Äã¶ÁÍêÖ®ºó¿É
+ÒÔÓÃ C-x 1 ¹ØµôÕâ¸ö°ïÖú´°¸ñ¡£µ±È»Äã²¢²»ÐèÒªÁ¢¼´ÕâÑù×ö£¬ÄãÍêÈ«¿ÉÒÔÏÈÔÚ±à
+¼­´°¸ñÀï×öµã±ðµÄÊÂÇé£¬È»ºóÔÙ¹Øµô°ïÖú´°¸ñ¡£
+
+»¹ÓÐÒ»Ð©ÆäËüÓÐÓÃµÄ C-h ÃüÁî£º
+
+   C-h f        ½âÊÍÒ»¸öº¯Êý¡£ÐèÒªÊäÈëº¯ÊýÃû¡£
+
+>> ÊÔÊÔ¿´£¬ÊäÈë C-h f previous-line<Return>¡£
+   Emacs »á¸ø³öËüËùÖªµÀµÄËùÓÐÓÐ¹Ø¡°ÊµÏÖ C-p ÃüÁî¹¦ÄÜµÄº¯Êý¡±µÄÐÅÏ¢¡£
+
+C-h v ÓÃÀ´ÏÔÊ¾ Emacs ±äÁ¿µÄÎÄµµ¡£Emacs ±äÁ¿¿ÉÒÔ±»ÓÃÀ´¡°¶¨ÖÆ Emacs µÄÐÐ
+Îª¡±¡£Í¬Ñù£¬ÄãÐèÒªÊäÈë±äÁ¿µÄÃû³Æ¡£
+
+   C-h a        Ïà¹ØÃüÁîËÑË÷£¨Command Apropos£©¡£
+                ÊäÈëÒ»¸ö¹Ø¼ü´ÊÈ»ºó Emacs »áÁÐ³öËùÓÐÃüÁîÃûÖÐ°üº¬´Ë¹Ø¼ü´Ê
+                µÄÃüÁî¡£ÕâÐ©ÃüÁîÈ«¶¼¿ÉÒÔÓÃ M-x À´Æô¶¯¡£¶ÔÓÚÄ³Ð©ÃüÁîÀ´Ëµ£¬
+                Ïà¹ØÃüÁîËÑË÷»¹»áÁÐ³öÒ»Á½¸ö×éºÏ¼ü¡£
+
+>> ÊäÈë C-h a file<Return>¡£
+
+Emacs »áÔÚÁíÒ»¸ö´°¸ñÀïÏÔÊ¾Ò»¸ö M-x ÃüÁîÁÐ±í£¬Õâ¸öÁÐ±í°üº¬ÁËËùÓÐÃû³ÆÖÐº¬
+ÓÐ¡°file¡±µÄÃüÁî¡£Äã¿ÉÒÔ¿´µ½Ïñ¡°C-x C-f¡±ÕâÑùµÄ×éºÏ¼üÏÔÊ¾ÔÚ¡°find-file¡±
+ÕâÑùµÄÃüÁîÃûµÄÅÔ±ß¡£
+
+>> ÓÃ C-M-v À´»Ø¹ö¶¯ help ´°¸ñ£¬¶àÊÔ¼¸´Î¡£
+
+>> ÊäÈë C-x 1 À´É¾³ý help ´°¸ñ¡£
+
+   C-h i        ÔÄ¶ÁÁª»úÊÖ²á£¨Ò²¾ÍÊÇÍ¨³£½²µÄ Info£©¡£
+                Õâ¸öÃüÁî»á´ò¿ªÒ»¸ö³ÆÎª¡°*info*¡±µÄÌØÊâ»º³åÇø£¬ÔÚÄÇÀï£¬
+                Äã¿ÉÒÔÔÄ¶Á°²×°ÔÚÏµÍ³ÀïµÄÈí¼þ°üÊ¹ÓÃÊÖ²á¡£Òª¶Á Emacs µÄÊ¹
+                ÓÃÊÖ²á£¬°´ m emacs <Return> ¾Í¿ÉÒÔÁË¡£Èç¹ûÄãÖ®Ç°´ÓÃ»ÓÃ
+                ¹ý Info ÏµÍ³£¬ÄÇÃ´Çë°´¡°?¡±£¬Emacs »á´øÄã½øÈë Info µÄÊ¹
+                ÓÃÖ¸ÄÏ¡£ÔÚ¿´Íê±¾¿ìËÙÖ¸ÄÏÖ®ºó£¬Emacs Info »á³ÉÎªÄãµÄÖ÷Òª
+                ²Î¿¼ÎÄµµ¡£
+
+
+* ¸ü¶à¾«²Ê£¨MORE FEATURES£©
+---------------------------
+
+ÏëÑ§Ï°¸ü¶àµÄÊ¹ÓÃ¼¼ÇÉ£¬Emacs Ê¹ÓÃÊÖ²á£¨manual£©ÖµµÃÒ»¶Á¡£Äã¿ÉÒÔ¶ÁÖ½°æµÄ
+Êé£¬Ò²¿ÉÒÔ¿´µç×Ó°æµÄÁª»úÊÖ²á£¨¿ÉÒÔ´Ó Help ²Ëµ¥½øÈë»òÕß°´ F10 h r£©¡£Ìá
+Á½¸öÄã¿ÉÄÜ»áºÜ¸ÐÐËÈ¤µÄ¹¦ÄÜ°É£¬Ò»¸öÊÇ¿ÉÒÔ°ïÄãÉÙÇÃ¼üÅÌµÄ completion£¨×Ô¶¯
+²¹È«£©£¬ÁíÒ»¸öÊÇ·½±ãÎÄ¼þ´¦ÀíµÄ dired£¨Ä¿Â¼±à¼­£©¡£
+
+Completion ¿ÉÒÔÌæÄã½ÚÊ¡²»±ØÒªµÄ¼üÅÌÊäÈë¡£±ÈÈçËµÄãÏëÇÐ»»µ½ *Message* »º
+³åÇø£¬Äã¾Í¿ÉÒÔÓÃ C-x b *M<Tab> À´Íê³É¡£Ö»Òª Emacs ÄÜ¹»¸ù¾ÝÄãÒÑ¾­ÊäÈëµÄ
+ÎÄ×ÖÈ·¶¨ÄãÏëÒªÊäÈëµÄÄÚÈÝ£¬Ëü¾Í»á×Ô¶¯°ïÄã²¹Æë¡£ÓÐ¹Ø Completion µÄÏêÏ¸Ëµ
+Ã÷¿ÉÒÔÔÚ Emacs Info ÖÐµÄ¡°Completion¡±Ò»½ÚÀïÕÒµ½¡£
+
+Dired ÄÜ¹»ÔÚÒ»¸ö»º³åÇøÀïÁÐ³öÒ»¸öÄ¿Â¼ÏÂµÄËùÓÐÎÄ¼þ£¨¿ÉÒÔÑ¡ÔñÊÇ·ñÒ²ÁÐ³ö×Ó
+Ä¿Â¼£©£¬È»ºóÄã¿ÉÒÔÔÚÕâ¸öÎÄ¼þÁÐ±íÉÏÍê³É¶ÔÎÄ¼þµÄÒÆ¶¯¡¢·ÃÎÊ¡¢ÖØÃüÃû»òÉ¾³ý
+µÈµÈ²Ù×÷¡£Dired Ò²ÔÚ Emacs Info ÖÐÓÐÏêÏ¸½éÉÜ£¬²Î¼û¡°Dired¡±Ò»½Ú¡£
+
+Emacs Ê¹ÓÃÊÖ²áÀï»¹ÓÐÐíÐí¶à¶àµÄ¾«²Ê¹¦ÄÜµÈ×ÅÄãÀ´ÁË½â¡£
+
+
+* ×Ü½á£¨CONCLUSION£©
+--------------------
+
+¼Ç×¡£¬ÒªÍË³ö Emacs ÇëÓÃ C-x C-c¡£ÒªÔÝÊ±ÇÐ»»µ½ shell ²¢ÇÒÉÔºóÔÙ»Øµ½
+Emacs ÀïÀ´£¬ÇëÓÃ C-z¡£¡¾ÇÐ»»µ½ shell ½ö¶Ô¿ØÖÆÌ¨ÏÂµÄ Emacs ÓÐÐ§¡¿
+
+±¾ÎÄÍêÈ«ÊÇÎªÁãÆðµãÐÂÊÖËùÐ´µÄÆð²½½Ì³Ì¡£Èç¹ûÄã¾õµÃÄÄÀï»¹¿´²»Ã÷°×£¬Ç§Íò²»
+Òª»³ÒÉ×Ô¼º£¬ÄÇÒ»¶¨ÊÇÎÒÃÇÃ»ÓÐÐ´ºÃ¡£ÎÒÃÇÓÀÔ¶»¶Ó­ÄãµÄ²»ÂúºÍ±§Ô¹¡£
+
+
+* ·­Òë£¨TRANSLATION£©
+---------------------
+
+·­Òë£ºËïÒ»½­ <sunyijiang@gmail.com>
+Ð£¶Ô£ºË®Ä¾ÉçÇø£¨www.newsmth.net£©Emacs °åÖÚ¶àÍøÓÑ¼°ÖÚ¶à Emacs ÖÐÎÄÓÃ»§
+
+Emacs ¿ìËÙÖ¸ÄÏ£¨Tutorial£©ÔçÓÐÁ½¸öÁõÕÑºêµÄÖÐÎÄÒë±¾£¬·±¼ò¸÷Ò»¡£Æä¼òÌå°æ±¾
+£¨TUTORIAL.cn£©»ù±¾ÓÉ·±Ìå°æ±¾£¨TUTORIAL.zh£©¾­´ÊÓïÌæ»»¶øµÃ¡£È»¶ø·±¼òÖÐÎÄ
+²»½öÔÚÓÃ´ÊÏ°¹ßÉÏÓÐËù²»Í¬£¬¸üÓÐÖî¶à±í´ï·½Ê½Óë¾ä·¨·½ÃæµÄ²îÒì£¬Òò´ËÒ»Ö±ÒÔÀ´
+ÓÃ»§Ê¹ÓÃ TUTORIAL.cn ¶¼»áÂÔ¾õÉúÓ²ºÍ»ÞÉ¬¡£Õâ´ÎÖØÐÂ·­Òë TUTORIAL.cn µÄ¶¯»ú
+ÕýÊÇÔ´ÓÚÕâÖÖÌåÑé£¬Ï£ÍûÎÒÃÇµÄ¹¤×÷ÄÜ¹»ÈÃ±¾ÎÄ¸üºÃµØ·¢»ÓÆä×÷ÓÃ¡£TUTORIAL.zh
+µÄÒëÎÄÖÊÁ¿ºÜ¸ß£¬ÔÚ·­Òë¹ý³ÌÖÐ¸øÓè¹ýÎÒÃÇÐí¶à½è¼øºÍ²Î¿¼£¬ÔÚ´Ë¶ÔÁõÕÑºêµÄ¹¤×÷
+±íÊ¾¸ÐÐ»¡£
+
+·­Òë¹ý³ÌÖÐ×î´óµÄÌôÕ½Äª¹ýÓÚÊõÓïÒë´ÊµÄÑ¡ÔñÁË¡£¾­¹ýË®Ä¾ÉçÇø Emacs °åÈÈÐÄÍø
+ÓÑÐ¡·¶Î§ÄÚµÄÌÖÂÛ£¬ÎÒÃÇÑ¡ÔñÁËÏÖÔÚµÄÒë·¨¡£ÓÃ»§µÄ¹ã·º²ÎÓëÊÇ×ÔÓÉÈí¼þÉúÃüÁ¦
+µÄÔ´Èª£¬ËùÒÔÈç¹ûÄãÓÐÈÎºÎ½¨Òé¡¢¿±Îó»òÏë·¨£¬ÇëÓÃÄãÏ²»¶µÄ·½Ê½ÏòÎÒÃÇÌá³ö¡£
+Äã¿ÉÒÔÍ¨¹ýµç×ÓÓÊ¼þÖ±½ÓÁªÏµÒëÕß£¬Ò²¿ÉÒÔ·Åµ½ GNU Emacs µÄ¿ª·¢ÓÊ¼þÁÐ±í»òÕß
+Ë®Ä¾ÉçÇøµÄ Emacs °åÉÏ½øÐÐÌÖÂÛ¡£
+
+ÏÂÃæÁÐ³öÖ÷ÒªÊõÓïµÄÒë´Ê¶ÔÕÕ£¬²¢¸ø³ö×¢ÊÍËµÃ÷£º
+
+    command               ÃüÁî
+    cursor                ¹â±ê
+    scrolling             ¹ö¶¯
+    numeric argument      Êý×Ö²ÎÊý
+    window                ´°¸ñ [1]
+    insert                ²åÈë
+    delete                É¾³ý [2]
+    kill                  ÒÆ³ý [2]
+    yank                  ÕÙ»Ø [2]
+    undo                  ³·Ïú
+    file                  ÎÄ¼þ
+    buffer                »º³åÇø
+    minibuffer            Ð¡»º³å
+    echo area             »ØÏÔÇø
+    mode line             ×´Ì¬À¸
+    search                ËÑË÷
+    incremental search    ½¥½øÊ½ËÑË÷ [3]
+
+[1] ¡°window¡±Ò»´ÊÔÚ¼ÆËã»úÏà¹ØµÄÁìÓòÒ»°ã¶¼±»ÒëÎª¡°´°¿Ú¡±¡£µ«ÊÇÔÚ Emacs
+    ÖÐ£¬»¹ÓÐÒ»¸ö¡°frame¡±µÄ¸ÅÄî¡£ÔÚ±»¹ã·ºÊ¹ÓÃµÄ X ´°¿ÚÏµÍ³ºÍÎ¢ÈíµÄÊÓ´°
+    £¨Windows£©ÏµÁÐ²Ù×÷ÏµÍ³ÖÐ£¬Emacs µÄÒ»¸ö¡°frame¡±¾ÍÊÇÒ»¸ö¡°´°¿Ú¡±£¬Òò
+    ´Ë°Ñ Emacs ÖÐµÄ¡°frame¡±Òë³É¡°´°¿Ú¡±¸ü¼Ó·ûºÏÍ¨³£µÄÏ°¹ß¡£ÕâÑù£¬Emacs
+    ÖÐµÄ¡°window¡±¾ÍÖ»ÄÜÒë³É¡°´°¸ñ¡±ÁË¡£ÎÒÃÇÈÏÎª Emacs ÖÐ window ºÍ
+    frame µÄ¹ØÏµÓÃ´°¸ñºÍ´°¿ÚÀ´Àà±ÈÊÇÊ®·ÖÐÎÏóµÄ¡£
+
+    ¡¶Ñ§Ï°GNU Emacs¡·£¨µÚ¶þ°æ£©Ò»Êé¶Ô¡°window¡±ºÍ¡°frame¡±µÄ·­ÒëÓë±¾½Ì³Ì
+    ¸ÕºÃÏà·´£¨·Ö±ðÒë×÷¡°´°¿Ú¡±ºÍ¡°´°¸ñ¡±£©¡£ÔÚ´ËÌØ±ð×¢Ã÷£¬ÒÔÏû³ý¿ÉÄÜ²úÉú
+    µÄÒÉ»ó¡££¨¸ÐÐ»ÀîÐñÕÂ <lixuzhang@gmail.com> Ö¸³ö£©
+
+[2] ¶ÔÓÚ¡°delete¡±ºÍ¡°kill¡±µÄÇø±ð£¬ÕýÎÄÒÑ¾­¸ø³öÁËÏêÏ¸µÄËµÃ÷¡£¡°É¾³ý¡±ºÍ
+    ¡°ÒÆ³ý¡±Ïà±È½ÏÆðÀ´£¬Ç°Õß¸ü¶àµØÒþº¬×Å¡°ÆÆ»µ¡±ºÍ¡°²»¿É»Ö¸´¡±µÄÒâË¼£¬¶ø
+    ºóÕß¸ü¶àµØÒþº¬×Å¡°±»×ªÒÆ¡±ºÍ¡°¿É»Ö¸´¡±µÄÒâË¼¡£Òò´Ë·Ö±ðÑ¡ÔñËüÃÇ×÷ÎªÉÏ
+    ÊöÁ½´ÊµÄÒë´Ê£¬Ï£ÍûÄÜ¹»ÌåÏÖ³öÇø±ð¡£¡°yank¡±ÔÚÖÐÎÄÎÄµµÖÐÏÊÓÐ¶ÔÓ¦Òë´Ê³ö
+    ÏÖ£¬·­ÒëµÄÀ§ÄÑ½Ï´ó¡£¾¿Æä±¾ÒâÊÇ£º¡°a strong sudden pull¡±£¨²Î¼ûÎ¤ÊÏ´Ê
+    µä£©£¬¼´¡°ÃÍÈ»À­»Ø¡±¡£ÔÚÔ­ÎÄµµÖÐ yank ±»ÒýÉêÎª¡°½«ÏÈÇ°ÒÆ³ýµÄ¶«Î÷ÔÙÒÆ
+    »ØÀ´¡±Õâ¸öÒâË¼£¬ËùÒÔÎÒÃÇÑ¡ÔñÁË¡°ÕÙ»Ø¡±Ò»´ÊÓëÆä¶ÔÓ¦¡£
+
+[3] ¡°incremental¡±Ò»´ÊÔÚ¼ÆËã»úÖø×÷ÖÐ¹ã·º³öÏÖ£¬±»¹ã·º½ÓÊÜµÄÖÐÎÄÒë´ÊÓÐÁ½
+    ¸ö£º¡°ÔöÁ¿µÄ¡±ºÍ¡°½¥½øµÄ¡±¡£¡°incremental search¡±·­Òë³É¡°ÔöÁ¿Ê½ËÑË÷
+    ¡±»òÕß¡°½¥½øÊ½ËÑË÷¡±¶¼½²µÃÍ¨£¬ÇÒ¶¼ÓÐ¸÷×ÔµÄÐÎÏóÖ®´¦¡£»¹ÊÇ²Î¿¼Ô­ÎÄ¶ÔÆä
+    µÄ½âÊÍ£º¡°... means that the search happens while you type in the
+    string to search for¡±¡£ÒâË¼ÊÇÖ®ËùÒÔ³ÆÆäÎª¡°incremental search¡±£¬ÊÇ
+    ÒòÎª¡°ÔÚÄãÊäÈëËÑË÷×Ö·û´®µÄ¹ý³ÌÖÐ£¬ËÑË÷¾ÍÒÑ¾­ÔÚ½øÐÐÁË¡±¡£ÎÒÃÇÈÏÎª¡°Ôö
+    Á¿µÄ¡±¸ü¼ÓÇ¿µ÷ÔÚÏÖÓÐ»ù´¡ÉÏµÄ±ä»¯£¨±ÈÈç¡°ÔöÁ¿±¸·Ý¡±£¬¡°ÔöÁ¿±àÒë¡±£©£»
+    ¶ø¡°½¥½øµÄ¡±¸ü¼ÓÇ¿µ÷¹ý³ÌµÄÖð½¥·¢Õ¹£¬Ò²¸ü¼Ó·ûºÏÔ­ÎÄµÄÒâË¼¡£Òò´ËÎÒÃÇÑ¡
+    Ôñ½«¡°incremental search¡±Òë×÷¡°½¥½øÊ½ËÑË÷¡±¡£
+
+
+* °æÈ¨ÉùÃ÷£¨COPYING£©
+---------------------
+
+This tutorial descends from a long line of Emacs tutorials
+starting with the one written by Stuart Cracraft for the original Emacs.
+
+This version of the tutorial, like GNU Emacs, is copyrighted, and
+comes with permission to distribute copies on certain conditions:
+
+Copyright (C) 1985, 1996, 1998, 2001, 2002, 2003, 2004,
+   2005, 2006, 2007, 2008, 2009  Free Software Foundation, Inc.
+
+   Permission is granted to anyone to make or distribute verbatim copies
+   of this document as received, in any medium, provided that the
+   copyright notice and permission notice are preserved,
+   and that the distributor grants the recipient permission
+   for further redistribution as permitted by this notice.
+
+   Permission is granted to distribute modified versions
+   of this document, or of portions of it,
+   under the above conditions, provided also that they
+   carry prominent notices stating who last altered them.
+
+The conditions for copying Emacs itself are more complex, but in the
+same spirit.  Please read the file COPYING and then do give copies of
+GNU Emacs to your friends.  Help stamp out software obstructionism
+("ownership") by using, writing, and sharing free software!
+
+¡¾ÏÂÃæÎª°æÈ¨ÉùÃ÷µÄÒëÎÄ£¬½ö¹©²Î¿¼¡£Êµ¼Ê·¨ÂÉÐ§Á¦ÒÔÓ¢ÎÄÔ­ÎÄÎª×¼¡£¡¿
+
+±¾¿ìËÙÖ¸ÄÏÑØÏ®×ÔÀúÊ·ÓÆ¾ÃµÄ Emacs ¿ìËÙÖ¸ÄÏ£¬¿ÉÉÏËÝÖÁ Stuart Cracraft Îª×î
+³õµÄ Emacs Ëù×÷µÄ°æ±¾¡£
+
+±¾ÆªÎÄµµÓë GNU Emacs Ò»ÑùÓµÓÐ°æÈ¨£¬²¢ÔÊÐíÔÚÏÂÁÐÌõ¼þµÄÔ¼ÊøÏÂ·¢ÐÐÆä¿½±´£º
+
+   Copyright (C) 1985, 1996, 1998, 2001, 2002, 2003, 2004, 2005, 2006,
+   2007, 2008, 2009  Free Software Foundation, Inc.
+
+   ±¾ÎÄµµÔÊÐíÔÚ²»±ä¸üÎÄµµÄÚÈÝµÄÇé¿öÏÂÓÉÈÎºÎÈË·¢²¼ÔÚÈÎºÎÃ½ÌåÉÏ£¬Í¬Ê±±ØÐë
+   ÍêÕû±£Áô°æÈ¨ºÍÐí¿ÉÉùÃ÷£¬ÇÒÐè¸øÓèÊÜÖÚÓë·¢ÐÐÕßÍêÈ«ÏàÍ¬µÄ¡¢Èç±¾ÉùÃ÷ËùÔÊ
+   ÐíµÄÔÙ´Î·¢ÐÐ±¾ÎÄµµµÄÈ¨Àû¡£
+
+   ±¾ÉùÃ÷ÔÊÐíÔÚÓëÉÏÊöÌõ¼þÏàÍ¬µÄÇé¿öÏÂ·¢²¼¾­¹ýÐÞ¸ÄµÄÈ«²¿»ò²¿·ÖÎÄµµ£¬Í¬Ê±
+   ±ØÐë¸½´øÏÔÒªµÄÎÄ×ÖÒÔÉêÃ÷ÎÄµµµÄ×îºóÐÞ¸ÄÕß¡£
+
+Emacs ×ÔÉíµÄ°æÈ¨ÎÊÌâËä±È±¾ÎÄµµÒª¸´ÔÓÒ»Ð©£¬µ«Ò²»ùÓÚÏàÍ¬µÄ¾«Éñ¡£¾´ÇëÔÄ¶ÁÎÄ
+¼þ¡°COPYING¡±£¬È»ºóÏòÄãµÄÅóÓÑÃÇ·Ö·¢ GNU Emacs ¿½±´¡£ÈÃÎÒÃÇÒÔÊ¹ÓÃ¡¢±àÐ´ºÍ
+·ÖÏí×ÔÓÉÈí¼þµÄÊµ¼ÊÐÐ¶¯À´¹²Í¬ìî³ýÈí¼þÕÏ°­Ö÷Òå£¨ËùÎ½µÄ¡°ËùÓÐÈ¨¡±£©£¡
+
+;;; Local Variables:
+;;; coding: chinese-iso-8bit
+;;; End:
+
+;;; arch-tag: 46a53d82-a85a-46b6-bdc7-583aca063578

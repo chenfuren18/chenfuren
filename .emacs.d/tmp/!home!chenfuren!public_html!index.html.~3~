@@ -1,0 +1,24 @@
+<html>
+<head>
+   <meta http-equiv="content-type" content="text/html; charset=utf-8">
+   <title>Index</title>
+   <link rel="stylesheet" href="style.css" type="text/css" media="screen" />
+</head>
+
+<body>
+<div id="main">
+  
+<div class="date">
+  November 17, 2009
+</div>
+<h2>On Web Typography</h2>
+<div class="auth">
+  <em>by</em> <a href="#">Jason Santa Maria</a>
+</div>
+
+<p>Until now, chances are that if we dropped text onto a web page in a system font at a reasonable size, it was legible. But with many typefaces about to be freed for use on websites, choosing the right ones to complement a site's design will be far more challenging. Many faces to which we’ll soon have access were never meant for screen use, either because they’re aesthetically unsuitable or because they’re just plain illegible. Jason Santa Maria, a force behind improved type on the web, presents qualities and methods to keep in mind as we venture into the widening world of web type.</p>
+
+</div>
+
+</body>
+</html>

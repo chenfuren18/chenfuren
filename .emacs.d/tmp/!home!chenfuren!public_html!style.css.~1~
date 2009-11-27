@@ -1,0 +1,12 @@
+     body{ background:red;}
+     h2{
+	 text-align: center;
+	 border:2px solid white;
+	 background: #111;
+	 padding:10px;
+	 margin:50px;
+     }
+
+     .as{ color:green; }
+
+     #test{ color:white; background:black; }

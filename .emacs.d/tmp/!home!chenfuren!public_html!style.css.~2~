@@ -1,0 +1,28 @@
+body{ font-size:12px;}
+h2{
+    text-align: center;
+    color:red;
+    
+}
+.date{ 
+    text-align: center;
+    font-size:14px; 
+    line-height:2em;
+    border-bottom:1px dashed black;
+}
+
+.auth{text-align: center;}
+.auth a{
+    color:green;
+    padding:0 10px;
+    text-decoration: none;
+    font-weight: bold;
+    border-bottom:1px solid white;
+}
+.auth a:hover{
+    color:black;
+    background:#ccc;
+    border-bottom:1px solid black;
+}
+
+#main{ width:35em;}
